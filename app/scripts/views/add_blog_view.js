@@ -24,12 +24,17 @@
 
       });
 
-      p.setACL(new Parse.ACL(App.user));
+      // p.setACL(new Parse.ACL(App.user));
+      var postACL = new Parse.ACL(Parse.User.current());
+
+      postACL.setPublicReadAccess(true);
+
+      p.setACL(postACL);
 
       p.save(null, {
         success: function(){
           App.posts.add(p);
-          App.router.navigate('', {trigger: true });
+          App.router.navigate('globalPosts', {trigger: true });
         }
       });
     }

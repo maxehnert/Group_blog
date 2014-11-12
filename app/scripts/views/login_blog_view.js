@@ -26,7 +26,7 @@
       Parse.User.logIn(username, password, {
         success: function (user) {
           App.user = user;
-          App.router.navigate('', {trigger: true});
+          App.router.navigate('globalPosts', {trigger: true});
           console.log('were logged in');
         }
       });

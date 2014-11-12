@@ -26,6 +26,7 @@
       user.signUp(null, {
         success: function(user) {
           alert('you worked!');
+          App.router.navigate('myPosts', {trigger: true});
         }
         // error: function(user, error) {
         // //   // Show the error message somewhere and let the user try again.
