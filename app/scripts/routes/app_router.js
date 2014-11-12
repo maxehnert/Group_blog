@@ -8,7 +8,8 @@
       'login' : 'userLogin',
       'signUp' : 'userSignUp',
       'content/:postID' : 'fullPost',
-      'globalPosts' : 'globalPosts'
+      'globalPosts' : 'globalPosts',
+      'myPosts' : 'myPosts'
     //  '' : 'land'
 
 
@@ -21,7 +22,10 @@
     //   new App.Views.Landing();
     // },
     home: function(){
-      //new App.Views.ListPosts();
+
+    },
+    myPosts: function(){
+      new App.Views.ListPosts({collection: App.posts});
     },
     editPost: function(postId){
       var p = App.posts.get(postId)
