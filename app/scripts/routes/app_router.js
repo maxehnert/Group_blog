@@ -38,6 +38,7 @@
     },
     fullPost: function(postId){
       var p = App.posts.get(postId)
+      console.log(p);
       new App.Views.FullContentView({ post: p});
     },
     globalPosts: function(){
