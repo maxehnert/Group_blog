@@ -11,7 +11,7 @@
 
     initialize: function(options){
       this.options = options;
-
+console.log(this.options.user);
       this.render();
 
       this.collection.off();
@@ -27,10 +27,15 @@
 
       // Query Parse for specific coffee per user
       var user_post = new Parse.Query(App.Models.Post);
-      user_post.equalTo('user', App.user);
+      //user_post.equalTo('user', App.user);
+      user_post.equalTo('user', this.options.user);
       user_post.find({
         success: function (results) {
-          var new_coll = ? // How do we get a collection here, not an array?
+        //  var new_coll = ? // How do we get a collection here, not an array?
+        _.each(results, function(p){
+          self.$el.append(self.template(p.toJSON()));
+
+        });
           self.collection = new_coll;
           self.render();
         }
@@ -40,10 +45,10 @@
       var self = this;
       this.$el.empty();
 
-     this.collection.each(function(p){
-        console.log(p);
-        self.$el.append(self.template(p.toJSON()));
-      });
+    //  this.collection.each(function(p){
+    //     //console.log(p);
+    //     self.$el.append(self.template(p.toJSON()));
+    //   });
 
       //add sorting if/elses here
 

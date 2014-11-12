@@ -25,7 +25,8 @@
 
     },
     myPosts: function(){
-      new App.Views.ListPosts({collection: App.posts});
+      new App.Views.ListPosts({collection: App.posts, user: App.user});
+
     },
     editPost: function(postId){
       var p = App.posts.get(postId)
