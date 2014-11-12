@@ -6,7 +6,11 @@
       "edit/:postID" : 'editPost',
       'add' : 'addPost',
       'login' : 'userLogin',
-      'signUp' : 'userSignUp'
+      'signUp' : 'userSignUp',
+      'content/:postID' : 'fullPost',
+      'globalPosts' : 'globalPosts',
+      'myPosts' : 'myPosts'
+    //  '' : 'land'
 
 
     },
@@ -14,8 +18,15 @@
       Parse.history.start();
 
     },
+    // land: function(){
+    //   new App.Views.Landing();
+    // },
     home: function(){
-      new App.Views.ListPosts({collection: App.posts});
+
+    },
+    myPosts: function(){
+      new App.Views.ListPosts({collection: App.posts, user: App.user});
+
     },
     editPost: function(postId){
       var p = App.posts.get(postId)
@@ -29,7 +40,16 @@
     },
     userSignUp: function(){
       new App.Views.SignUpView();
+    },
+    fullPost: function(postId){
+      var p = App.posts.get(postId)
+      console.log(p);
+      new App.Views.FullContentView({ post: p});
+    },
+    globalPosts: function(){
+      new App.Views.GlobalListPosts({collection: App.posts});
     }
+
   });
 
 }());

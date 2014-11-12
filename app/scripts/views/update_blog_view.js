@@ -38,7 +38,7 @@
 
       this.options.post.save();
 
-      App.router.navigate('', {trigger:true});
+      App.router.navigate('myPosts', {trigger:true});
     },
 
     deletePost: function(e){
@@ -46,7 +46,7 @@
 console.log('test');
       this.options.post.destroy();
 
-      App.router.navigate('', {trigger: true});
+      App.router.navigate('myPosts', {trigger: true});
     }
 
   });

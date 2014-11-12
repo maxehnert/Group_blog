@@ -22,8 +22,10 @@
     <!-- endbuild -->
   </head>
   <body>
+    <div id="loginModal"></div>
     <div class="body-container">
 
+<<<<<<< HEAD
 <div class="nav-bar">
 <a href="#/add" class="addBtn"><button>Add</button></a>
 <a href="#/signUp"><button>sign up</button></a>
@@ -32,27 +34,53 @@
 </div>
 <div id="whatever">
 </div>
+=======
+    <div class="nav-bar">
+      <a href="#/add" class="addBtn"><button>Add</button></a>
+      <a href="#/signUp"><button>sign up</button></a>
+      <a href="#/login"><button>login</button></a>
+      <a href="#/myPosts"><button>my posts</button></a>
+      <button id="log-out-btn">log out</button>
+      <a href="#/globalPosts"><button>global posts</button></a>
+>>>>>>> 5882e3fd88d128e0ffe88fb22de437ba7cd82035
 
+      <span id="loggedIn"></span>
 
+    </div>
+    <div id="whatever">
+    </div>
 
     <div class="hero-unit">
       <h1><a href="#/">blog</a></h1>
     </div>
 
-
     <div id="blogList">
-
     </div>
 
 
 </div><!--body container ends here-->
+
+
+<!-- Modal Window --><!--
+<script type="text/template" id="modalTemp">
+
+  <div class="modal-window">
+      <div class="modal-inner">
+        <label class="modal-close" for="modal-1"></label>
+        <h1>Modal Title</h1>
+        <p class="intro">Intro</p>
+        <p class="body">Body</p>
+      </div>
+  </div>
+</script>
+-->
 <!-- Add New Post-->
     <script type="text/template" id="addTemp">
 
       <form action="submit" id="addPost">
 
         <input type="text" id="postTitle" required>
-        <textarea name="" id="postContent" required></textarea>
+        <textarea  id="postContent" required></textarea>
         <input type="text" id="postCategory" required>
         <input type="text" id="postImage" placeholder="image url">
         <button>Publish Post</button>
@@ -62,11 +90,11 @@
 
 <!-- Update the Post -->
     <script type="text/template" id="updateTemp">
-      <li id="<%= objectId %>">
+      <li id="<%=objectId%>">
         <form action="submit" id="updatePost">
-          <input type="text" id="updateTitle" value="<%= title %>">
-          <input id="updateContent" value="<%= content %>">
-          <input type="text" id="updateCategory" value="<%= category %>">
+          <input type="text" id="updateTitle" value="<%=title%>">
+          <input id="updateContent" value="<%=content%>">
+          <input type="text" id="updateCategory" value="<%=category%>">
 
           <button id="delete">Delete</button>
           <button>Update</button>
@@ -74,10 +102,31 @@
       </li>
     </script>
 
-<!-- List ALL Posts in the HTML -->
+<!-- List User Posts in the HTML -->
     <script type="text/template" id="listTemp">
-      <li id="<%= objectId %>">
-        <a href="#/edit/<%= objectId %>">
+      <li id="<%=objectId%>">
+        <a href="#/edit/<%=objectId%>">
+          <div class="post-setup">
+          <div id="blog-image">
+
+          </div>
+            <h2 class="title">
+            <%= title %>
+           </h2>
+            <p class="other">
+
+            <%= content %>
+            <%= category %>
+            </p>
+          </div>
+        </a>
+      </li>
+    </script>
+
+<!-- List ALL Posts in the HTML -->
+    <script type="text/template" id="globalListTemp">
+      <li id="<%=objectId%>">
+        <a href="#/content/<%=objectId%>">
           <div class="post-setup">
           <div id="blog-image">
 
@@ -86,6 +135,7 @@
             <%= title %>
            </h2>
             <p class="other">
+
             <%= content %>
             <%= category %>
             <p>
@@ -93,7 +143,24 @@
         </a>
       </li>
     </script>
+    <!--this is the view for a single, uneditable post-->
+    <script type="text/template" id="singlePostTemp">
+    <li >
+    <div class="post-setup">
+    <div id="blog-image">
 
+    </div>
+     <h2 class="title">
+      <%= title %>
+     </h2>
+      <p class="other">
+
+      <%= content %>
+      <%= category %>
+      <p>
+    </div>
+    </li>
+</script>
     <!-- User Sign Up -->
     <script type="text/template" id="SignUpTemp">
       <form action="submit" id="signUp">
@@ -134,8 +201,11 @@
         <script src="scripts/collections/blog_collection.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/views/add_blog_view.js"></script>
-<!--         <script src="scripts/views/comments_blog_view.js"></script>
- -->        <script src="scripts/views/list_blog_view.js"></script>
+        <script src="scripts/views/content_blog_view.js"></script>
+<!--  <script src="scripts/views/comments_blog_view.js"></script>-->
+        <script src="scripts/views/user_posts_blog_view.js"></script>
+        <script src="scripts/views/global_list_blog_view.js"></script>
+  <!--      <script src="scripts/views/modal_blog_view.js"></script>-->
         <script src="scripts/views/signUp_blog_view.js"></script>
         <script src="scripts/views/login_blog_view.js"></script>
         <!-- <script src="scripts/views/single_post_blog_view.js"></script> -->

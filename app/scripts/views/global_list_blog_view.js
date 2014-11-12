@@ -1,13 +1,13 @@
 (function(){
 
-  App.Views.ListPosts = Parse.View.extend({
+  App.Views.GlobalListPosts = Parse.View.extend({
 
     tagName: 'ul',
     className: 'addPosts',
 
     events: {},
 
-    template : _.template($('#listTemp').html()),
+    template : _.template($('#globalListTemp').html()),
 
     initialize: function(options){
       this.options = options;
