@@ -22,29 +22,43 @@
     <!-- endbuild -->
   </head>
   <body>
+    <div id="loginModal"></div>
     <div class="body-container">
 
-<div class="nav-bar">
-<a href="#/add" class="addBtn"><button>Add</button></a>
-<a href="#/signUp"><button>sign up</button></a>
-<a href="#/login"><button>login</button></a>
-</div>
-<div id="whatever">
-</div>
+    <div class="nav-bar">
+      <a href="#/add" class="addBtn"><button>Add</button></a>
+      <a href="#/signUp"><button>sign up</button></a>
+      <a href="#/login"><button>login</button></a>
+      <button id="log-out-btn">log out</button>
 
-
+    </div>
+    <div id="whatever">
+    </div>
 
     <div class="hero-unit">
       <h1><a href="#/">blog</a></h1>
     </div>
 
-
     <div id="blogList">
-
     </div>
 
 
 </div><!--body container ends here-->
+
+
+<!-- Modal Window -->
+<script type="text/template" id="modalTemp">
+
+  <div class="modal-window">
+      <div class="modal-inner">
+        <label class="modal-close" for="modal-1"></label>
+        <h1>Modal Title</h1>
+        <p class="intro">Intro</p>
+        <p class="body">Body</p>
+      </div>
+  </div>
+</script>
+
 <!-- Add New Post-->
     <script type="text/template" id="addTemp">
 
@@ -73,7 +87,7 @@
       </li>
     </script>
 
-<!-- List ALL Posts in the HTML -->
+<!-- List User Posts in the HTML -->
     <script type="text/template" id="listTemp">
       <li id="<%= objectId %>">
         <a href="#/edit/<%= objectId %>">
@@ -85,6 +99,28 @@
             <%= title %>
            </h2>
             <p class="other">
+
+            <%= content %>
+            <%= category %>
+            <p>
+          </div>
+        </a>
+      </li>
+    </script>
+
+<!-- List ALL Posts in the HTML -->
+    <script type="text/template" id="globalListTemp">
+      <li id="<%= objectId %>">
+        <a href="#/content/<%= objectId %>">
+          <div class="post-setup">
+          <div id="blog-image">
+
+          </div>
+           <h2 class="title">
+            <%= title %>
+           </h2>
+            <p class="other">
+
             <%= content %>
             <%= category %>
             <p>
@@ -133,8 +169,10 @@
         <script src="scripts/collections/blog_collection.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/views/add_blog_view.js"></script>
-<!--         <script src="scripts/views/comments_blog_view.js"></script>
- -->        <script src="scripts/views/list_blog_view.js"></script>
+<!--  <script src="scripts/views/comments_blog_view.js"></script>-->
+        <script src="scripts/views/list_blog_view.js"></script>
+        <script src="scripts/views/global_list_blog_view.js"></script>
+        <script src="scripts/views/modal_blog_view.js"></script>
         <script src="scripts/views/signUp_blog_view.js"></script>
         <script src="scripts/views/login_blog_view.js"></script>
         <!-- <script src="scripts/views/single_post_blog_view.js"></script> -->

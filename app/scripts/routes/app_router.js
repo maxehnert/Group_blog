@@ -6,7 +6,9 @@
       "edit/:postID" : 'editPost',
       'add' : 'addPost',
       'login' : 'userLogin',
-      'signUp' : 'userSignUp'
+      'signUp' : 'userSignUp',
+      'content/:postID' : 'fullPost'
+    //  '' : 'land'
 
 
     },
@@ -14,6 +16,9 @@
       Parse.history.start();
 
     },
+    // land: function(){
+    //   new App.Views.Landing();
+    // },
     home: function(){
       new App.Views.ListPosts({collection: App.posts});
     },
@@ -29,6 +34,9 @@
     },
     userSignUp: function(){
       new App.Views.SignUpView();
+    },
+    fullPost: function(){
+      new App.Views.FullContentView();
     }
   });
 

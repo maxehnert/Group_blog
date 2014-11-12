@@ -27,6 +27,7 @@
         success: function (user) {
           App.user = user;
           App.router.navigate('', {trigger: true});
+          console.log('were logged in');
         }
       });
     }

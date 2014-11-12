@@ -6,11 +6,11 @@
   idAttribute: 'objectId',
 
   defaults: {
-    username: '',
     title: '',
     content: '',
     category: '',
-    image:''
+    image:'',
+    user: ''
   },
 
   initialize: function (){

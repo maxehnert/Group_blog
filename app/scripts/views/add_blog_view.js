@@ -19,10 +19,13 @@
       var p = new App.Models.Post({
         title: $('#postTitle').val(),
         content: $('#postContent').val(),
-        category: $('#postCategory').val()
+        category: $('#postCategory').val(),
+        user: App.user
 
       });
 
+      p.setACL(new Parse.ACL(App.user));
+      console.log(p);
       p.save(null, {
         success: function(){
           App.posts.add(p);
