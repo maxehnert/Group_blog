@@ -8,6 +8,7 @@
     events: {},
 
     template : _.template($('#listTemp').html()),
+    //  _.template($('#titleTemp').html()),
 
     initialize: function(options){
       this.options = options;
