@@ -1,9 +1,9 @@
 (function(){
 
-  App.Views.ListAllPosts = Parse.View.extend({
+  App.Views.GlobalListPosts = Parse.View.extend({
 
     tagName: 'ul',
-    className: 'allPosts',
+    className: 'addPosts',
 
     events: {},
 

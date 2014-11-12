@@ -7,7 +7,8 @@
       'add' : 'addPost',
       'login' : 'userLogin',
       'signUp' : 'userSignUp',
-      'content/:postID' : 'fullPost'
+      'content/:postID' : 'fullPost',
+      'globalPosts' : 'globalPosts'
     //  '' : 'land'
 
 
@@ -20,7 +21,7 @@
     //   new App.Views.Landing();
     // },
     home: function(){
-      new App.Views.ListPosts({collection: App.posts});
+      //new App.Views.ListPosts();
     },
     editPost: function(postId){
       var p = App.posts.get(postId)
@@ -35,9 +36,14 @@
     userSignUp: function(){
       new App.Views.SignUpView();
     },
-    fullPost: function(){
-      new App.Views.FullContentView();
+    fullPost: function(postId){
+      var p = App.posts.get(postId)
+      new App.Views.FullContentView({ post: p});
+    },
+    globalPosts: function(){
+      new App.Views.GlobalListPosts({collection: App.posts});
     }
+
   });
 
 }());

@@ -9,8 +9,8 @@
     title: '',
     content: '',
     category: '',
-    image:'',
-    user: ''
+    image:''
+
   },
 
   initialize: function (){

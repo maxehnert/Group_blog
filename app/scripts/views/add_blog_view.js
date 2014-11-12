@@ -25,7 +25,7 @@
       });
 
       p.setACL(new Parse.ACL(App.user));
-      console.log(p);
+
       p.save(null, {
         success: function(){
           App.posts.add(p);
