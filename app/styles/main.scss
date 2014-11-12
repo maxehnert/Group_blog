@@ -1,0 +1,140 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+$neongreen: hsla(158, 100%, 50%, 1);
+// Custom Styles
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+.body-container{
+height: 1000px;  background-image:url("../images/28H.jpg");
+  background-size: cover;
+
+}
+.hero-unit {
+  width: 100%;
+  border-radius: 6px;
+  padding: 20px;
+  h1 {
+    font-size: 100px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -1px;
+  }
+  a{
+    text-decoration: none;
+    color: hsl(201,8,52);
+  }
+}
+#addPost, #updatePost{
+  background-color: #eee;
+  opacity: .9;
+  border: 1px solid gray;
+  width: 500px;
+  height: 450px;
+  margin-left: 150px;
+  position: relative;
+  display: block;
+  #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 430px;
+  }
+  #updateTitle{
+   position: absolute;
+   margin-left: 30px;
+   margin-top: 20px;
+  }
+  #postContent, #updateContent{
+    position: absolute;
+    height: 250px;
+    margin-top: 80px;
+  }
+  #postCategory, #updateCategory{
+    margin-top: 350px;
+  }
+  #postImage{
+    margin-left: 30px;
+    width: 140px;
+  }
+  button{
+    margin-left: 30px;
+    margin-top: 400px;
+  }
+}
+
+#signUp, #login{
+  background-color: #eee;
+  opacity: .8;
+  display: block;
+  padding: 5px;
+  width: 200px;
+  border: 1px solid gray;
+  margin-left: 800px;
+  #signUpUser, #user{
+    margin-top: 10px;
+  }
+  #signUpPassword, #password{
+    margin-top: 10px;
+  }
+  button{
+    margin-top: 20px;
+  }
+}
+#blogList{
+  margin-top: -70px;
+}
+.addPosts li{
+  list-style-type: none;
+  margin-left: 180px;
+  width: 800px;
+  border: 1px solid gray;
+  background-color: white;
+  opacity: .6;
+  padding: 10px;
+  &:hover{
+    background-color: #eee;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.nav-bar{
+  //margin-top: 20px;
+  margin-left: 500px;
+  a{
+    color: hsl(201,8,52);
+  }
+
+}
+.post-setup{
+  position: relative;
+  height: 120px;
+  .title{
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 5px;
+  }
+  .other{
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 80px;
+  }
+}
+#blog-image{
+  height: 120px;
+  width: 120px;
+  margin-top: -10px;
+  margin-left: 5px;
+  position: absolute;
+  background-color:  hsl(201,8,52);
+  img{
+  height: 120px;
+  width: 120px;
+  }
+}
