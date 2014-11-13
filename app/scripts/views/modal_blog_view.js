@@ -1,8 +1,8 @@
 (function(){
 App.Views.Landing = Parse.View.extend({
 
-  tagName: 'modal',
-  className: 'landing',
+//  tagName: 'modal',
+//  className: 'landing',
   events: {},
 
   template: _.template($('#modalTemp').html()),

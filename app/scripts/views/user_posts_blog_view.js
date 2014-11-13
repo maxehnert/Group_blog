@@ -33,9 +33,11 @@
         //  var new_coll = ? // How do we get a collection here, not an array?
 
         console.log(results);
+        self.$el.empty();
         _.each(results, function(p){
           var html = self.template(p.toJSON());
           self.$el.append(html);
+
 
         });
       },
