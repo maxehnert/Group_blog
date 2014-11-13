@@ -2,18 +2,17 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/bitters/app/assets/stylesheets/base';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
-@import '../../bower_components/bitters/app/assets/stylesheets/base';
 $neongreen: hsla(158, 100%, 50%, 1);
 
 $oswald:'Oswald', sans-serif;
 // Custom Styles
 body {
-  background-color: green;
+//  background-color: green;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 .body-container{
-height: 1000px;  background-image:url("../images/28H.jpg");
+//height: 1000px;  background-image:url("../images/28H.jpg");
   background-size: cover;
 
 }
@@ -152,29 +151,29 @@ height: 1000px;  background-image:url("../images/28H.jpg");
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
 
-  label {
-    cursor: pointer;
-    margin-bottom: 0;
-  }
+/*   label {
+  cursor: pointer;
+  margin-bottom: 0;
+}
 
-  label img {
-    $img-width: 300px;
-    border-radius: $img-width/2;
-    display: block;
-    max-width: $img-width;
-  }
+label img {
+  \$img-width: 300px;
+  border-radius: \$img-width/2;
+  display: block;
+  max-width: \$img-width;
+}
 
-  input[type="checkbox"] {
-    display: none;
-  }
+input[type="checkbox"] {
+  display: none;
+}
 
-  .btn {
-    @extend button;
-  }
+.btn {
+  @extend button;
+}
 
-  .modal-open {
-    overflow: hidden;
-  }
+.modal-open {
+  overflow: hidden;
+} */
 
   .modal-window { // overlay
     @include transition(opacity .25s ease);

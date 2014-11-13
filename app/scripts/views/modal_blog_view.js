@@ -11,6 +11,7 @@ App.Views.Landing = Parse.View.extend({
     this.render();
 
     $('#loginModal').html(this.$el);
+    this.$el.html(this.template);
     $(window).on('load',function(){
         $('.modal').show();
     });
