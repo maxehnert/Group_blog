@@ -36,7 +36,7 @@ console.log(this.options.user);
           self.$el.append(self.template(p.toJSON()));
 
         });
-          self.collection = new_coll;
+          self.collection(); //= new_coll;
           self.render();
         }
       });

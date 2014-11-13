@@ -9,8 +9,8 @@
       'signUp' : 'userSignUp',
       'content/:postID' : 'fullPost',
       'globalPosts' : 'globalPosts',
-      'myPosts' : 'myPosts'
-    //  '' : 'land'
+      'myPosts' : 'myPosts',
+      '' : 'land'
 
 
     },
@@ -18,12 +18,12 @@
       Parse.history.start();
 
     },
-    // land: function(){
-    //   new App.Views.Landing();
-    // },
-    home: function(){
-
+    land: function(){
+      new App.Views.Landing();
     },
+    // home: function(){
+    //
+    // },
     myPosts: function(){
       new App.Views.ListPosts({collection: App.posts, user: App.user});
 
