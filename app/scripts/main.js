@@ -13,6 +13,13 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
 
   });
 
+
+  $('#logOut').on('click', function (e){
+    e.preventDefault();
+    Parse.User.logOut();
+    App.router.navigate('', {trigger: true});
+  });
+
 $('#log-out-btn').on('click', function(e){
 e.preventDefault();
 Parse.User.logOut();
