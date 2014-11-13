@@ -12,14 +12,10 @@
     initialize: function(options){
       this.options = options;
 
-      this.render();
-
       this.collection.off();
       this.collection.on('sync', this.render, this);
-      this.collection = _.filter(this.collection, function(p) {
-          return p.attributes.draft === true;
-      })
 
+      this.render();
       $('#blogList').html(this.$el);
 
     },
@@ -29,7 +25,9 @@
       this.$el.empty();
 
       this.collection.each(function(p){
-        self.$el.append(self.template(p.toJSON()));
+        if (p.attributes.draft === false) {
+          self.$el.append(self.template(p.toJSON()));
+        }
       });
 
       //add sorting if/elses here

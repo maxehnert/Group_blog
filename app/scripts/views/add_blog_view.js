@@ -41,21 +41,21 @@
     //   });
     // },
 
-    addPost: function(publish) {
+    addPost: function(draft) {
 
       var p = new App.Models.Post({
         title: $('#postTitle').val(),
         content: $('#postContent').val(),
         category: $('#postCategory').val(),
-        user: App.user
-
+        user: App.user,
+        draft: draft
 
       });
 
       // p.setACL(new Parse.ACL(App.user));
       var postACL = new Parse.ACL(Parse.User.current());
 
-      postACL.setPublicReadAccess(publish);
+      postACL.setPublicReadAccess(!draft);
 
       p.setACL(postACL);
 
@@ -69,12 +69,12 @@
     },
     addDraft: function(e) {
       e.preventDefault();
-      this.addPost(false);
+      this.addPost(true);
     },
 
     addPublic: function(e) {
       e.preventDefault();
-      this.addPost(true);
+      this.addPost(false);
     }
 
     // addDraft: function(e){

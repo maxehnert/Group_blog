@@ -9,9 +9,7 @@
     title: '',
     content: '',
     category: '',
-    image:'',
-    draft: false
-
+    image:''
   },
 
   initialize: function (){
