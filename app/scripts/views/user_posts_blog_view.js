@@ -11,7 +11,7 @@
 
     initialize: function(options){
       this.options = options;
-console.log(this.options.user);
+      console.log(this.options.user);
       this.render();
 
       this.collection.off();
@@ -27,18 +27,21 @@ console.log(this.options.user);
 
       // Query Parse for specific coffee per user
       var user_post = new Parse.Query(App.Models.Post);
-      //user_post.equalTo('user', App.user);
       user_post.equalTo('user', this.options.user);
       user_post.find({
         success: function (results) {
         //  var new_coll = ? // How do we get a collection here, not an array?
+
+        console.log(results);
         _.each(results, function(p){
-          self.$el.append(self.template(p.toJSON()));
+          var html = self.template(p.toJSON());
+          self.$el.append(html);
 
         });
-          self.collection(); //= new_coll;
-          self.render();
-        }
+      },
+      error: function (e, msg) {
+        console.log("errors were had: " + msg);
+      }
       });
     },
     render: function(){

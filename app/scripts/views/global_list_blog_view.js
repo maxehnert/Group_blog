@@ -16,6 +16,9 @@
 
       this.collection.off();
       this.collection.on('sync', this.render, this);
+      this.collection = _.filter(this.collection, function(p) {
+          return p.attributes.draft === true;
+      })
 
       $('#blogList').html(this.$el);
 

@@ -9,7 +9,8 @@
     title: '',
     content: '',
     category: '',
-    image:''
+    image:'',
+    draft: false
 
   },
 
