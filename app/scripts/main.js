@@ -14,6 +14,7 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
   });
 
 
+
   $('#logOut').on('click', function (e){
     e.preventDefault();
     Parse.User.logOut();

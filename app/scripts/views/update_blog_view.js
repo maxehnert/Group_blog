@@ -5,7 +5,8 @@
     className: 'updatePost',
 
     events: {
-      'submit #updatePost' : 'updatePost',
+      'click #updateDraft' : 'updateDraft',
+      'click #publishDraft' : 'publishDraft',
       'click #delete' : 'deletePost'
     },
 
@@ -26,7 +27,7 @@
     this.$el.html(this.template(this.options.post.toJSON()));
 
     },
-    updatePost: function(e){
+    updateDraft: function(e){
       e.preventDefault();
 
       this.options.post.set({
@@ -40,14 +41,49 @@
 
       App.router.navigate('myPosts', {trigger:true});
     },
+    publishDraft: function(draft) {
+    //  draft.preventDefault();
+      this.publishDraft(true);
+      var p = new App.Models.Post({
+        title: $('#postTitle').val(),
+        content: $('#postContent').val(),
+        category: $('#postCategory').val(),
+        user: App.user,
+        draft: draft
+
+      });
+
+      // p.setACL(new Parse.ACL(App.user));
+      var postACL = new Parse.ACL(Parse.User.current());
+
+      postACL.setPublicReadAccess(!draft);
+
+      p.setACL(postACL);
+
+      p.save(null, {
+        success: function(){
+          App.posts.add(p);
+          App.router.navigate('myPosts', {trigger: true });
+        }
+      });
+
+    },
 
     deletePost: function(e){
       e.preventDefault();
-console.log('test');
       this.options.post.destroy();
 
       App.router.navigate('myPosts', {trigger: true});
     }
+    // updateDraft: function(e) {
+    //   e.preventDefault();
+    //   this.updatePost(true);
+    // },
+    //
+    // publishDraft: function(e) {
+    //   e.preventDefault();
+    //   this.updatePost(false);
+    // }
 
   });
 

@@ -81,9 +81,9 @@
 
       <form action="submit" id="addPost">
 
-        <input type="text" id="postTitle" required>
-        <textarea  id="postContent" required></textarea>
-        <input type="text" id="postCategory" required>
+        <input type="text" id="postTitle" required placeholder="Title">
+        <textarea  id="postContent" required placeholder="Content"></textarea>
+        <input type="text" id="postCategory" required placeholder="Category">
         <input type="text" id="postImage" placeholder="image url">
         <button id="publishPost">Publish Post</button>
         <button id="addDraft">Save as Draft</button>
@@ -94,13 +94,14 @@
     <script type="text/template" id="updateTemp">
       <li id="<%=objectId%>">
         <form action="submit" id="updatePost">
-          <input type="text" id="updateTitle" value="<%=title%>">
-          <input id="updateContent" value="<%=content%>">
-          <input type="text" id="updateCategory" value="<%=category%>">
+          <input type="text" id="updateTitle" value="<%=title%>" placeholder="Title">
+          <textarea id="updateContent" value="<%=content%>" placeholder="Content"></textarea>
+          <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category">
 
           <button id="delete">Delete</button>
-          <button id="updateDraft">Update</button>
-        </form>
+          <button id="updateDraft">Update Draft</button>
+          <button id="publishDraft">Publish Draft</button>
+       </form>
       </li>
     </script>
 
