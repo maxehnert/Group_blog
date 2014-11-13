@@ -86,7 +86,8 @@
         <input type="text" id="postCategory" required>
         <input type="text" id="postImage" placeholder="image url">
         <button id="publishPost">Publish Post</button>
-        <button id="addDraft">Save as Draft</button>
+      <!--  <button id="addDraft">Save as Draft</button>-->
+        <input type="checkbox" id="addDraft"> <label id="savedraft">Save as Draft</label>
       </form>
     </script>
 
@@ -100,6 +101,10 @@
 
           <button id="delete">Delete</button>
           <button id="updateDraft">Update</button>
+
+          <% if(draft === true) { %>
+            <button id="publishDraft">Publish Draft</button>
+          <% } %>
         </form>
       </li>
     </script>
