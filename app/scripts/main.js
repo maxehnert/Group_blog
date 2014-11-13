@@ -13,14 +13,13 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
 
   });
 
-<<<<<<< HEAD
 
   $('#logOut').on('click', function (e){
     e.preventDefault();
     Parse.User.logOut();
     App.router.navigate('', {trigger: true});
   });
-=======
+
 $('#log-out-btn').on('click', function(e){
 e.preventDefault();
 Parse.User.logOut();
@@ -44,7 +43,6 @@ App.router.navigate('', {trigger: true});
   };
   App.updateUser();
 
->>>>>>> 5882e3fd88d128e0ffe88fb22de437ba7cd82035
 
 
 

@@ -1,12 +1,15 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import '../../bower_components/bitters/app/assets/stylesheets/base';
 $neongreen: hsla(158, 100%, 50%, 1);
+
+$oswald:'Oswald', sans-serif;
 // Custom Styles
 body {
-  background: #fafafa;
+  background-color: green;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+
 }
 .body-container{
 height: 1000px;  background-image:url("../images/28H.jpg");
@@ -137,4 +140,29 @@ height: 1000px;  background-image:url("../images/28H.jpg");
   height: 120px;
   width: 120px;
   }
+}
+
+.topbanner{
+
+  height: 1000px;
+  //opacity: .3;
+  background-image: url("../images/vang.jpg");
+  background-size: cover;
+  margin-top: -300px;
+  position: relative;
+  h1{
+  color: red;
+  margin-top: 150px;
+
+}
+}
+.header{
+  border: 4px dashed yellow;
+  background-color: green;
+  position: absolute;
+  opacity: .3;
+  height: 700px;
+  margin-top: 200px;
+  width: 100%;
+
 }
