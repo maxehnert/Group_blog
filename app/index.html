@@ -27,20 +27,28 @@
     <div id="loginModal"></div>
     <div class="body-container">
 
-<!--   <div class="topbanner">
+  <div class="topbanner">
 <h1>travelblog</h1>
+
+
    <div class="header">
 
    </div>
 
-</div> -->
-    <div class="nav-bar">
-      <a href="#/add" class="addBtn"><button>Add</button></a>
-      <a href="#/signUp"><button>sign up</button></a>
-      <a href="#/login"><button>login</button></a>
-      <a href="#/myPosts"><button>my posts</button></a>
-      <button id="log-out-btn">log out</button>
-      <a href="#/globalPosts"><button>global posts</button></a>
+
+  <div id="blogList">
+  </div>
+
+</div>
+
+<div class="nav-bar">
+  <a href="#/add" class="addBtn"><button>Add</button></a>
+  <a href="#/signUp"><button>sign up</button></a>
+  <a href="#/login"><button>login</button></a>
+  <a href="#/myPosts"><button>my posts</button></a>
+  <button id="log-out-btn">log out</button>
+  <a href="#/globalPosts"><button>global posts</button></a>
+</div>
 
       <span id="loggedIn"></span>
 
@@ -50,9 +58,6 @@
 
     <div class="hero-unit">
       <h1><a href="#/">blog</a></h1>
-    </div>
-
-    <div id="blogList">
     </div>
 
 
@@ -91,6 +96,7 @@
     <script type="text/template" id="updateTemp">
       <li id="<%=objectId%>">
         <form action="submit" id="updatePost">
+
           <input type="text" id="updateTitle" value="<%=title%>" placeholder="Title">
           <textarea id="updateContent"  placeholder="Content"><%=content%></textarea>
           <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category">
@@ -112,14 +118,15 @@
         <a href="#/edit/<%=objectId%>">
           <div class="post-setup">
           <div id="blog-image">
-
+          <img src=" <%= image%>" />
           </div>
             <h2 class="title">
             <%= title %>
            </h2>
+
             <p class="other">
 
-            <%= content %>
+        <!--    <%= content %>-->
             <%= category %>
             </p>
           </div>
