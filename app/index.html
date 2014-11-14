@@ -26,130 +26,111 @@
   <body>
     <div id="loginModal"></div>
     <div class="body-container">
-
-  <div class="topbanner">
-<h1><a href="#/">travelblog</a></h1>
-
-
-   <div class="header">
-
-   </div>
-
-
-  <div id="blogList">
-  </div>
-
-
-<div class="nav-bar">
-  <a href="#/add" class="addBtn"><button>Add</button></a>
-  <a href="#/signUp"><button>sign up</button></a>
-  <a href="#/login"><button>login</button></a>
-  <a href="#/myPosts"><button>my posts</button></a>
-  <button id="log-out-btn">log out</button>
-  <a href="#/globalPosts"><button>global posts</button></a>
-  <div id="loginField"></div>
-</div>
-<span id="loggedIn"></span>
-</div>
-</div><!--body container ends here-->
+      <div class="topbanner">
+        <h1><a href="#/">travelblog</a></h1>
+        <div class="header"></div>
+        <div id="blogList"></div>
+        <div class="nav-bar">
+          <a href="#/add" class="addBtn"><button>Add</button></a>
+          <a href="#/signUp"><button>sign up</button></a>
+          <a href="#/login"><button>login</button></a>
+          <a href="#/myPosts"><button>my posts</button></a>
+          <button id="log-out-btn">log out</button>
+          <a href="#/globalPosts"><button>global posts</button></a>
+          <div id="loginField"></div>
+        </div>
+        <span id="loggedIn"></span>
+      </div>
+    </div><!--body container ends here-->
 
 
 <!-- Modal Window -->
 <script type="text/template" id="modalTemp">
-<div class="modal">
-  <div class="modal-window">
-      <div class="modal-inner">
-        <label class="modal-close" for="modal-1"></label>
-        <h1>Modal Title</h1>
-        <p class="intro">Intro Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem porro accusamus, alias inventore beatae impedit eius reprehenderit velit rerum earum eos aliquam tempore error, esse deserunt enim ab ex quis.</p>
-        <p class="body">Body</p>
-      </div>
+  <div class="modal">
+    <div class="modal-window">
+        <div class="modal-inner">
+          <label class="modal-close" for="modal-1"></label>
+          <h1>Modal Title</h1>
+          <p class="intro">Intro Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem porro accusamus, alias inventore beatae impedit eius reprehenderit velit rerum earum eos aliquam tempore error, esse deserunt enim ab ex quis.</p>
+          <p class="body">Body</p>
+        </div>
+    </div>
   </div>
-</div>
 </script>
+
 <!-- Add New Post-->
-    <script type="text/template" id="addTemp">
-
-      <form action="submit" id="addPost">
-
-        <input type="text" id="postTitle" required placeholder="Title">
-        <textarea  id="postContent" required placeholder="Content"></textarea>
-<!--         <input type="text" id="postCategory" required placeholder="Category">
- -->        <input type="text" id="postImage" placeholder="image url">
-        <select name="select" id="postCategory">
-          <option value="Just Visited">Just Visited</option>
-          <option value="Current Trip">Current Trip</option>
-          <option value="Future Trip">Future Trip</option>
-          <option value="Other">Other</option>
-        </select>
-        <button id="publishPost">Publish Post</button>
-      <!--  <button id="addDraft">Save as Draft</button>-->
-        <input type="checkbox" id="addDraft"> <label id="savedraft">Save as Draft</label>
-      </form>
-    </script>
+<script type="text/template" id="addTemp">
+  <form action="submit" id="addPost">
+    <input type="text" id="postTitle" required placeholder="Title">
+    <textarea  id="postContent" required placeholder="Content"></textarea>
+<!--         <input type="text" id="postCategory" required placeholder="Category"> -->
+    <input type="text" id="postImage" placeholder="image url">
+    <select name="select" id="postCategory">
+      <option value="Just Visited">Just Visited</option>
+      <option value="Current Trip">Current Trip</option>
+      <option value="Future Trip">Future Trip</option>
+      <option value="Other">Other</option>
+    </select>
+    <button id="publishPost">Publish Post</button>
+  <!--  <button id="addDraft">Save as Draft</button>-->
+    <input type="checkbox" id="addDraft"> <label id="savedraft">Save as Draft</label>
+  </form>
+</script>
 
 <!-- Update the Post -->
-    <script type="text/template" id="updateTemp">
-      <li id="<%=objectId%>">
-        <form action="submit" id="updatePost">
-
-          <input type="text" id="updateTitle" value="<%=title%>" placeholder="Title">
-          <textarea id="updateContent"  placeholder="Content"><%=content%></textarea>
-          <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category">
-
-          <button id="delete">Delete</button>
-
-          <button id="updateDraft">Update</button>
-
-          <% if(draft === true) { %>
-            <button id="publishDraft">Publish Draft</button>
-          <% } %>
-        </form>
-      </li>
-    </script>
+<script type="text/template" id="updateTemp">
+  <li id="<%=objectId%>">
+    <form action="submit" id="updatePost">
+      <input type="text" id="updateTitle" value="<%=title%>" placeholder="Title">
+      <textarea id="updateContent"  placeholder="Content"><%=content%></textarea>
+      <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category">
+      <button id="delete">Delete</button>
+      <button id="updateDraft">Update</button>
+      <% if(draft === true) { %>
+        <button id="publishDraft">Publish Draft</button>
+      <% } %>
+    </form>
+  </li>
+</script>
 
 <!-- List User Posts in the HTML -->
-    <script type="text/template" id="listTemp">
-      <li id="<%=objectId%>">
-        <a href="#/edit/<%=objectId%>">
-          <div class="post-setup">
-          <div id="blog-image">
+<script type="text/template" id="listTemp">
+  <li id="<%=objectId%>">
+    <a href="#/edit/<%=objectId%>">
+      <div class="post-setup">
+        <div id="blog-image">
           <img src=" <%= image%>" />
-          </div>
-            <h2 class="title">
-            <%= title %>
-           </h2>
-
-            <p class="other">
-
-        <!--    <%= content %>-->
-            <%= category %>
-            </p>
-          </div>
-        </a>
-      </li>
-    </script>
+        </div>
+        <h2 class="title">
+          <%= title %>
+        </h2>
+        <p class="other">
+    <!--    <%= content %>-->
+        <%= category %>
+        </p>
+      </div>
+    </a>
+  </li>
+</script>
 
 <!-- List ALL Posts in the HTML -->
 <script type="text/template" id="globalListTemp">
   <li id="<%=objectId%>">
     <a href="#/content/<%=objectId%>">
       <div class="post-setup">
-      <div id="blog-image">
-
-      </div>
-       <h2 class="title">
-        <%= title %>
-       </h2>
-        <p class="other">
-
-        <%= content %>
-        <%= category %>
-        <p>
+        <div id="blog-image"></div>
+         <h2 class="title">
+          <%= title %>
+         </h2>
+          <p class="other">
+          <%= content %>
+          <%= category %>
+          <p>
       </div>
     </a>
   </li>
 </script>
+
 <!--this is the view for a single, uneditable post-->
 <script type="text/template" id="singlePostTemp">
   <li >
