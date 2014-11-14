@@ -10,6 +10,8 @@
     content: '',
     category: '',
     image:''
+
+
   },
 
   initialize: function (){

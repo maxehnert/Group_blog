@@ -49,6 +49,8 @@
         category: $('#postCategory').val(),
         image: $('#postImage').val(),
         user: App.user,
+        author: App.user.attributes.username,
+        authorid: App.user.id,
         draft: draft
 
       });

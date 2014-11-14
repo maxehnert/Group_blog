@@ -36,6 +36,7 @@
         console.log(results);
         self.$el.empty();
         _.each(results, function(p){
+
           var html = self.template(p.toJSON());
           self.$el.append(html);
 

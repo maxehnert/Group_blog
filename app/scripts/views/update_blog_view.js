@@ -75,20 +75,14 @@
           App.router.navigate('myPosts', {trigger: true });
         }
       });
-
     },
-
     publishDraft: function(e){
       e.preventDefault();
       this.updatePost(false);
-
     },
-
-
     deletePost: function(e){
       e.preventDefault();
       this.options.post.destroy();
-
       App.router.navigate('myPosts', {trigger: true});
     }
     // updateDraft: function(e) {
