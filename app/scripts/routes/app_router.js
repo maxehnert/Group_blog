@@ -43,11 +43,10 @@
     },
     fullPost: function(postId){
       var p = App.posts.get(postId);
-      var u = App.user.attributes.username;
       console.log(p);
-      console.log(u);
 
-      new App.Views.FullContentView({ post: p},{ username:u});
+
+      new App.Views.FullContentView({ post: p});
     },
     globalPosts: function(){
       new App.Views.GlobalListPosts({collection: App.posts});

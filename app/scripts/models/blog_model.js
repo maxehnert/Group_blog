@@ -10,7 +10,6 @@
     content: '',
     category: '',
     image:''
-  //  username: ''
   },
 
   initialize: function (){

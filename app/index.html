@@ -28,7 +28,7 @@
     <div class="body-container">
 
   <div class="topbanner">
-<h1>travelblog</h1>
+<h1><a href="#/">travelblog</a></h1>
 
 
    <div class="header">
@@ -39,7 +39,6 @@
   <div id="blogList">
   </div>
 
-</div>
 
 <div class="nav-bar">
   <a href="#/add" class="addBtn"><button>Add</button></a>
@@ -48,19 +47,10 @@
   <a href="#/myPosts"><button>my posts</button></a>
   <button id="log-out-btn">log out</button>
   <a href="#/globalPosts"><button>global posts</button></a>
+  <div id="loginField"></div>
 </div>
-
-      <span id="loggedIn"></span>
-
-    </div>
-    <div id="whatever">
-    </div>
-
-    <div class="hero-unit">
-      <h1><a href="#/">blog</a></h1>
-    </div>
-
-
+<span id="loggedIn"></span>
+</div>
 </div><!--body container ends here-->
 
 
@@ -84,8 +74,14 @@
 
         <input type="text" id="postTitle" required placeholder="Title">
         <textarea  id="postContent" required placeholder="Content"></textarea>
-        <input type="text" id="postCategory" required placeholder="Category">
-        <input type="text" id="postImage" placeholder="image url">
+<!--         <input type="text" id="postCategory" required placeholder="Category">
+ -->        <input type="text" id="postImage" placeholder="image url">
+        <select name="select" id="postCategory">
+          <option value="Just Visited">Just Visited</option>
+          <option value="Current Trip">Current Trip</option>
+          <option value="Future Trip">Future Trip</option>
+          <option value="Other">Other</option>
+        </select>
         <button id="publishPost">Publish Post</button>
       <!--  <button id="addDraft">Save as Draft</button>-->
         <input type="checkbox" id="addDraft"> <label id="savedraft">Save as Draft</label>
@@ -135,62 +131,64 @@
     </script>
 
 <!-- List ALL Posts in the HTML -->
-    <script type="text/template" id="globalListTemp">
-      <li id="<%=objectId%>">
-        <a href="#/content/<%=objectId%>">
-          <div class="post-setup">
-          <div id="blog-image">
+<script type="text/template" id="globalListTemp">
+  <li id="<%=objectId%>">
+    <a href="#/content/<%=objectId%>">
+      <div class="post-setup">
+      <div id="blog-image">
 
-          </div>
-           <h2 class="title">
-            <%= title %>
-           </h2>
-            <p class="other">
+      </div>
+       <h2 class="title">
+        <%= title %>
+       </h2>
+        <p class="other">
 
-            <%= content %>
-            <%= category %>
-            <p>
-          </div>
-        </a>
-      </li>
-    </script>
-    <!--this is the view for a single, uneditable post-->
-    <script type="text/template" id="singlePostTemp">
-    <li >
+        <%= content %>
+        <%= category %>
+        <p>
+      </div>
+    </a>
+  </li>
+</script>
+<!--this is the view for a single, uneditable post-->
+<script type="text/template" id="singlePostTemp">
+  <li >
     <div class="post-setup">
-    <div id="blog-image">
-
-    </div>
-     <h2 class="title">
-      <%= title %>
-     </h2>
+      <div id="blog-image"></div>
+      <h2 class="title">
+        <%= title %>
+      </h2>
       <p class="other">
-
-      <%= content %>
-      <%= category %>
-
-      <span>  Author: <%= username %></span>
+        <%= content %>
+        <%= category %>
       </p>
     </div>
-    </li>
+  </li>
 </script>
-    <!-- User Sign Up -->
-    <script type="text/template" id="SignUpTemp">
-      <form action="submit" id="signUp">
-        <input type="text" id="signUpUser">
-        <input type="password" id="signUpPassword"><br>
-        <button>Sign Up</button>
-      </form>
-    </script>
 
-    <!-- User Login -->
-    <script type="text/template" id="loginTemp">
-    <form action="submit" id="login">
-      <input type="text" id="username">
-      <input type="password" id="password">
-      <button>Login</button>
-    </form>
-    </script>
+<!-- User Sign Up -->
+<script type="text/template" id="SignUpTemp">
+  <form action="submit" id="signUp">
+    <input type="text" id="signUpUser">
+    <input type="password" id="signUpPassword"><br>
+    <button>Sign Up</button>
+  </form>
+</script>
+
+<!-- User Login -->
+<script type="text/template" id="loginTemp">
+  <form action="submit" id="login">
+    <input type="text" id="username">
+    <input type="password" id="password">
+    <button>Login</button>
+  </form>
+</script>
+
+  <!-- Comment Template
+<script type="text/template" id="commentTemp">
+      <li><%= commentText %></li>
+</script>
+-->
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -211,7 +209,8 @@
         <!-- build:js scripts/main.js -->
 
         <script src="scripts/models/blog_model.js"></script>
-        <script src="scripts/collections/blog_collection.js"></script>
+<!--         <script src="scripts/models/comments_model.js"></script>
+ -->        <script src="scripts/collections/blog_collection.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/views/add_blog_view.js"></script>
         <script src="scripts/views/content_blog_view.js"></script>

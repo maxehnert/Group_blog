@@ -8,7 +8,7 @@
     initialize: function(){
       this.render();
 
-      $('#whatever').html(this.$el);
+      $('#loginField').html(this.$el);
 
     },
 

@@ -31,6 +31,10 @@ body {
     color: hsl(201,8,52);
   }
 }
+#loginField{
+  position: absolute;
+  margin-left: -600px;
+}
 #addPost, #updatePost{
   background-color: #eee;
   opacity: .9;
@@ -129,10 +133,12 @@ body {
 .post-setup{
   position: relative;
   height: 120px;
+  background-color: white;
   .title{
     position: absolute;
     margin-left: 200px;
     margin-top: 5px;
+
     font-size: 40px;
     font-family: $oswald;
   }
@@ -144,8 +150,10 @@ body {
   }
   .other{
     position: absolute;
-    margin-left: 150px;
-    margin-top: 80px;
+    margin-left: 250px;
+    background-color: white;
+    width: 300px;
+    margin-top: 100px;
   }
 }
 #blog-image{
@@ -337,4 +345,16 @@ input[type="checkbox"] {
 //  margin-top: 100px;
   width: 100%;
 
+}
+
+#commentBox{
+  position: absolute;
+  margin-top: 200px;
+  width: 300px;
+  margin-left: 200px;
+}
+#commentbutton{
+  position: absolute;
+  margin-top: 290px;
+  margin-left: 200px;
 }
