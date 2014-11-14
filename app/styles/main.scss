@@ -200,8 +200,20 @@ body {
   height: 180px;
   width: 180px;
   }
+
 }
 
+#single-blog-image{
+  height: 400px;
+  width: 800px;
+  margin-left: 100px;
+  //position: absolute;
+  background-color:  hsl(201,8,52);
+  img{
+    height: 500px;
+    width: 500px;
+  }
+}
 
 //Modal window
 .modal {

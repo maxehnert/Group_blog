@@ -110,6 +110,7 @@
         </h2>
         <p class="other">
     <!--    <%= content %>-->
+        <%= createdAt %>
         <%= category %>
         </p>
       </div>
@@ -130,6 +131,8 @@
          </h2>
           <p class="other">
         <!--  <%= content %>    content will not show in this list view-->
+
+           <%= createdAt %>
           <%= category %>
           <p>
       </div>
@@ -141,7 +144,7 @@
 <script type="text/template" id="singlePostTemp">
   <li >
     <div class="post-setup">
-      <div id="blog-image">
+      <div id="single-blog-image">
       <img src=" <%= image%>" />
       </div>
       <h2 class="singleTitle">
