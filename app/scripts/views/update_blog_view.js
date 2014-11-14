@@ -5,9 +5,9 @@
     className: 'updatePost',
 
     events: {
-      'click #updateDraft' : 'updateDraft',
-      'click #publishDraft' : 'publishDraft',
-      'click #delete' : 'deletePost'
+      'submit #updatePost' : 'handleClick',
+      'click #delete' : 'deletePost',
+      'click #publishDraft' : 'publishDraft'
     },
 
     template : _.template($('#updateTemp').html()),
@@ -27,15 +27,24 @@
     this.$el.html(this.template(this.options.post.toJSON()));
 
     },
-    updateDraft: function(e){
-      e.preventDefault();
 
+
+    handleClick: function (e) {
+      e.preventDefault();
+      this.updatePost();
+    },
+
+    updatePost: function(draft){
+    //  console.log()
       this.options.post.set({
         title: $('#updateTitle').val(),
         content: $('#updateContent').val(),
         category: $('#updateCategory').val()
-
       });
+
+      if (draft != undefined) {
+        this.options.post.set('draft', draft);
+      }
 
       this.options.post.save();
 
@@ -68,6 +77,13 @@
       });
 
     },
+
+    publishDraft: function(e){
+      e.preventDefault();
+      this.updatePost(false);
+
+    },
+
 
     deletePost: function(e){
       e.preventDefault();

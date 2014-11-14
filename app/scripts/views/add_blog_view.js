@@ -49,6 +49,7 @@
         category: $('#postCategory').val(),
         user: App.user,
         draft: draft
+        //username: App.user.attributes.username
 
       });
 

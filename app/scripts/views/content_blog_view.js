@@ -8,18 +8,18 @@ App.Views.FullContentView = Parse.View.extend({
 
   initialize: function(options){
     this.options = options;
-
+console.log('init test',  App.user.attributes.username);
+this.username =  App.user.attributes.username;
     this.post = this.options.post;
 
     this.render();
-
+//console.log('init test', this.options.username);
     $('#blogList').html(this.$el);
   },
   render: function(){
-    console.log(this.post);
+    console.log(this.post, 'test', this.username);
     this.$el.html(this.template(this.post.toJSON()));
   }
-
 
 });
 }());
