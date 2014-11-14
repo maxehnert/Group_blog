@@ -4,9 +4,8 @@
     className: 'Comment',
 
     defaults: {
-      commentText: '',
-      //username
-      //time stamp
+      commentText: ''
+
     }
   });
 
