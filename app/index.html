@@ -41,6 +41,11 @@
         </div>
         <span id="loggedIn"></span>
       </div>
+      <div class="sorts">
+        <!-- <a href="#/">Rating</a> &bull; -->
+        <a href="#/sort/title">Title</a> &bull;
+        <a href="#/sort/category">Category</a>
+      </div>
     </div><!--body container ends here-->
 
 
@@ -83,7 +88,14 @@
     <form action="submit" id="updatePost">
       <input type="text" id="updateTitle" value="<%=title%>" placeholder="Title">
       <textarea id="updateContent"  placeholder="Content"><%=content%></textarea>
-      <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category">
+      <!-- <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category"> -->
+      <select name="select" id="updateCategory">
+        <option value="<%=category%>"><%=category%></option>
+        <option value="Just Visited">Just Visited</option>
+        <option value="Current Trip">Current Trip</option>
+        <option value="Future Trip">Future Trip</option>
+        <option value="Other">Other</option>
+      </select>
       <button id="delete">Delete</button>
       <button id="updateDraft">Update</button>
       <% if(draft === true) { %>
@@ -115,6 +127,7 @@
 
 <!-- List ALL Posts in the HTML -->
 <script type="text/template" id="globalListTemp">
+
   <li id="<%=objectId%>">
     <a href="#/content/<%=objectId%>">
       <div class="post-setup">

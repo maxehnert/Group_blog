@@ -10,7 +10,8 @@
       'content/:postID' : 'fullPost',
       'globalPosts' : 'globalPosts',
       'myPosts' : 'myPosts',
-      '' : 'land'
+      '' : 'land',
+      'sort/:sortby' : 'globalPosts'
 
 
     },
@@ -48,8 +49,8 @@
 
       new App.Views.FullContentView({ post: p});
     },
-    globalPosts: function(){
-      new App.Views.GlobalListPosts({collection: App.posts});
+    globalPosts: function(sortby){
+      new App.Views.GlobalListPosts({collection: App.posts, sort: sortby});
     }
 
   });

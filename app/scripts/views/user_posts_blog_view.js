@@ -25,9 +25,10 @@
 
       var self = this;
 
-      // Query Parse for specific coffee per user
+      // Query Parse for specific post per user
       var user_post = new Parse.Query(App.Models.Post);
       user_post.equalTo('user', this.options.user);
+      user_post.descending("updatedAt");
       user_post.find({
         success: function (results) {
         //  var new_coll = ? // How do we get a collection here, not an array?
