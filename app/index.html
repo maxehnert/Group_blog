@@ -30,6 +30,7 @@
   <div class="topbanner">
 <h1>travelblog</h1>
 
+
    <div class="header">
 
    </div>
@@ -39,15 +40,14 @@
 
 </div>
 
-
-
-    <div class="nav-bar">
-      <a href="#/add" class="addBtn"><button>Add</button></a>
-      <a href="#/signUp"><button>sign up</button></a>
-      <a href="#/login"><button>login</button></a>
-      <a href="#/myPosts"><button>my posts</button></a>
-      <button id="log-out-btn">log out</button>
-      <a href="#/globalPosts"><button>global posts</button></a>
+<div class="nav-bar">
+  <a href="#/add" class="addBtn"><button>Add</button></a>
+  <a href="#/signUp"><button>sign up</button></a>
+  <a href="#/login"><button>login</button></a>
+  <a href="#/myPosts"><button>my posts</button></a>
+  <button id="log-out-btn">log out</button>
+  <a href="#/globalPosts"><button>global posts</button></a>
+</div>
 
 
       <span id="loggedIn"></span>
@@ -97,7 +97,7 @@
       <li id="<%=objectId%>">
         <form action="submit" id="updatePost">
           <input type="text" id="updateTitle" value="<%=title%>">
-          <input id="updateContent" value="<%=content%>">
+          <textarea id="updateContent" ><%=content%></textarea>
           <input type="text" id="updateCategory" value="<%=category%>">
 
           <button id="delete">Delete</button>

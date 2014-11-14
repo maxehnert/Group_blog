@@ -118,7 +118,8 @@ body {
 }
 
 .nav-bar{
-  //margin-top: 20px;
+  position: absolute;
+  padding-top: 20px;
   margin-left: 500px;
   a{
     color: hsl(201,8,52);
