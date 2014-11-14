@@ -41,11 +41,11 @@
         </div>
         <span id="loggedIn"></span>
       </div>
-      <div class="sorts">
-        <!-- <a href="#/">Rating</a> &bull; -->
+<!--   <div class="sorts">
+       <a href="#/">Rating</a> &bull;
         <a href="#/sort/title">Title</a> &bull;
         <a href="#/sort/category">Category</a>
-      </div>
+      </div>-->
     </div><!--body container ends here-->
 
 <!--comment template-->
@@ -143,7 +143,9 @@
         </div>
          <h2 class="title">
           <%= title %>
+          <a href="#/author/<%= authorid %>"><%= author %></a>
          </h2>
+
           <p class="other">
         <!--  <%= content %>    content will not show in this list view-->
 
@@ -158,22 +160,25 @@
 <!--this is the view for a single, uneditable post-->
 <script type="text/template" id="singlePostTemp">
   <li >
-    <div class="post-setup">
+    <div class="single-post-setup">
       <div id="single-blog-image">
       <img src=" <%= image%>" />
       </div>
       <h2 class="singleTitle">
         <%= title %>
       </h2>
+      <h3 class="singleAuthor">
+      by <a href="#/author/<%= authorid %>"><%= author %></a>
+      </h3>
       <p class="singleCategory">
-      <%= category %>
+    <%= category %>
       </p>
       <p class="singleContent">
         <%= content %>
       </p>
         <form id="addComment">
           <textarea id="commentText" placeholder="Add Your Comments"></textarea>
-          <button>Add Comment</button>
+          <button id="adder">Add Comment</button>
         </form>
     </div>
   </li>
