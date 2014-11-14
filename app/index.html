@@ -43,6 +43,10 @@
       </div>
     </div><!--body container ends here-->
 
+<!--comment template-->
+    <script type="text/template" id="commentTemp">
+      <li><%= commentText %> </li>
+    </script>
 
 <!-- Modal Window -->
 <script type="text/template" id="modalTemp">
@@ -118,12 +122,14 @@
   <li id="<%=objectId%>">
     <a href="#/content/<%=objectId%>">
       <div class="post-setup">
-        <div id="blog-image"></div>
+        <div id="blog-image">
+        <img src=" <%= image%>" />
+        </div>
          <h2 class="title">
           <%= title %>
          </h2>
           <p class="other">
-          <%= content %>
+        <!--  <%= content %>    content will not show in this list view-->
           <%= category %>
           <p>
       </div>
@@ -135,14 +141,22 @@
 <script type="text/template" id="singlePostTemp">
   <li >
     <div class="post-setup">
-      <div id="blog-image"></div>
-      <h2 class="title">
+      <div id="blog-image">
+      <img src=" <%= image%>" />
+      </div>
+      <h2 class="singleTitle">
         <%= title %>
       </h2>
-      <p class="other">
-        <%= content %>
-        <%= category %>
+      <p class="singleCategory">
+      <%= category %>
       </p>
+      <p class="singleContent">
+        <%= content %>
+      </p>
+        <form id="addComment">
+          <textarea id="commentText" placeholder="Add Your Comments"></textarea>
+          <button>Add Comment</button>
+        </form>
     </div>
   </li>
 </script>
@@ -165,11 +179,7 @@
   </form>
 </script>
 
-  <!-- Comment Template
-<script type="text/template" id="commentTemp">
-      <li><%= commentText %></li>
-</script>
--->
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -190,8 +200,8 @@
         <!-- build:js scripts/main.js -->
 
         <script src="scripts/models/blog_model.js"></script>
-<!--         <script src="scripts/models/comments_model.js"></script>
- -->        <script src="scripts/collections/blog_collection.js"></script>
+        <script src="scripts/models/comments_model.js"></script>
+   <script src="scripts/collections/blog_collection.js"></script>
         <script src="scripts/routes/app_router.js"></script>
         <script src="scripts/views/add_blog_view.js"></script>
         <script src="scripts/views/content_blog_view.js"></script>
