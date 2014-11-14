@@ -29,6 +29,7 @@ App.Views.FullContentView = Parse.View.extend({
 
           _.each(results, function(comment) {
             $('ul.comments').append(commentTemplate(comment.toJSON()));
+
           })
 
        }
@@ -51,7 +52,7 @@ App.Views.FullContentView = Parse.View.extend({
     comment.save(null, {
       success: function () {
         console.log('Comment has been added');
-        App.router.navigate('', {trigger: true});
+        App.router.navigate('globalPosts', {trigger: true});
       }
     });
 
