@@ -27,13 +27,17 @@
     <div id="loginModal"></div>
     <div class="body-container">
 
-<!--   <div class="topbanner">
+  <div class="topbanner">
 <h1>travelblog</h1>
+
    <div class="header">
 
    </div>
 
-</div> -->
+  <div id="blogList">
+  </div>
+
+</div>
 
 
 
@@ -54,9 +58,6 @@
 
     <div class="hero-unit">
       <h1><a href="#/">blog</a></h1>
-    </div>
-
-    <div id="blogList">
     </div>
 
 
@@ -115,14 +116,15 @@
         <a href="#/edit/<%=objectId%>">
           <div class="post-setup">
           <div id="blog-image">
-
+          <img src=" <%= image%>" />
           </div>
             <h2 class="title">
             <%= title %>
            </h2>
+
             <p class="other">
 
-            <%= content %>
+        <!--    <%= content %>-->
             <%= category %>
             </p>
           </div>

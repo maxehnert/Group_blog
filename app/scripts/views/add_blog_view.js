@@ -47,6 +47,7 @@
         title: $('#postTitle').val(),
         content: $('#postContent').val(),
         category: $('#postCategory').val(),
+        image: $('#postImage').val(),
         user: App.user,
         draft: draft
 
