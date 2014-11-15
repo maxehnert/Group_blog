@@ -119,14 +119,18 @@
         </div>
         <h2 class="title">
           <%= title %>
-          <a href="#/author/<%= authorid %>"><%= author %></a>
+          <a href="#/author/<%= authorid %>">@<%= author %></a>
         </h2>
         <p class="other">
     <!--    <%= content %>-->
         <%= createdAt %>
         <%= category %>
-
-        </p>
+<!--  <% if(draft === true) { %>
+    <p class="draft-comment">
+    Draft
+    </p>
+    <% } %>
+        </p>-->
       </div>
     </a>
   </li>
@@ -143,9 +147,11 @@
         </div>
          <h2 class="title">
           <%= title %>
-          <a href="#/author/<%= authorid %>"><%= author %></a>
-         </h2>
 
+         </h2>
+          <h3 class="author">
+          <a href="#/author/<%= authorid %>">@<%= author %></a>
+          </h3>
           <p class="other">
         <!--  <%= content %>    content will not show in this list view-->
 
@@ -168,7 +174,7 @@
         <%= title %>
       </h2>
       <h3 class="singleAuthor">
-      by <a href="#/author/<%= authorid %>"><%= author %></a>
+      by <a href="#/author/<%= authorid %>"><%= author %> </a>
       </h3>
       <p class="singleCategory">
     <%= category %>
@@ -189,6 +195,7 @@
   <form action="submit" id="signUp">
     <input type="text" id="signUpUser">
     <input type="password" id="signUpPassword"><br>
+
     <button>Sign Up</button>
   </form>
 </script>

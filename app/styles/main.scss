@@ -2,6 +2,8 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/bitters/app/assets/stylesheets/base';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
 $neongreen: hsla(158, 100%, 50%, 1);
 
 $oswald:'Oswald', sans-serif;
@@ -96,7 +98,10 @@ body {
     margin-top: 10px;
   }
   button{
-    margin-top: 20px;
+    margin-top: 25px;
+  }
+  #signUpAvatar{
+    margin-top: 17px;
   }
 }
 #blogList{
@@ -108,17 +113,19 @@ body {
   list-style-type: none;
   margin-left: 100px;
   width: 800px;
+  margin-top: 15px;
   //border: 1px solid gray;
  background-color: black;
   opacity: .6;
   padding: 10px;
   &:hover{
-   opacity: .65;
+   opacity: .7;
   }
   a{
     text-decoration: none;
     color: white;
   }
+
 }
 
 .nav-bar{
@@ -187,17 +194,20 @@ body {
 
   .title{
     position: absolute;
-    margin-left: 200px;
-    margin-top: 5px;
+    margin-left: 210px;
+    margin-top: 20px;
 
     font-size: 40px;
     font-family: $oswald;
   }
 
-  .author{
+  .author a{
     position: absolute;
-    margin-left: 200px;
-    margin-top: 70px;
+    margin-left: 210px;
+    margin-top: 130px;
+    font-size: 20px;
+    color: white;
+    font-family: $oswald;
   }
   .other{
     position: absolute;
@@ -205,6 +215,14 @@ body {
 
     width: 300px;
     margin-top: 150px;
+  }
+  .draft-comment{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 120px;
+    font-family: $oswald;
+    font-size: 25px;
+    color:red;
   }
 
   #addComment{
@@ -224,15 +242,15 @@ body {
 
 
 #blog-image{
-  height: 180px;
-  width: 180px;
-//  margin-top: -10px;
-  margin-left: 5px;
+  height: 200px;
+  width: 200px;
+ margin-top: -10px;
+  margin-left: -8px;
   position: absolute;
   background-color:  hsl(201,8,52);
   img{
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
   }
 
 }

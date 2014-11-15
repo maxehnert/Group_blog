@@ -21,6 +21,7 @@
 
       username: $('#signUpUser').val(),
       password: $('#signUpPassword').val()
+    
 
       });
       user.signUp(null, {
