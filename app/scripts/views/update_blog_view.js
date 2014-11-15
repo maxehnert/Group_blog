@@ -39,7 +39,8 @@
       this.options.post.set({
         title: $('#updateTitle').val(),
         content: $('#updateContent').val(),
-        category: $('#updateCategory').val()
+        category: $('#updateCategory').val(),
+        image: $('#UpdatepostImage').val()
       });
 
       if (draft != undefined) {

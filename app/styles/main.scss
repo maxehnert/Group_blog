@@ -56,15 +56,23 @@ background-color: black;
    margin-left: 10px;
    margin-top: 10px;
  }
- #postTitle{
+ #postTitle, #updateTitle{
    font-family: $oswald;
  }
- #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory{
+ #postTitle, #postContent,#postCategory, #postImage{
    background-color: #eee;
    position: absolute;
    margin-top: 20px;
    margin-left: 10px;
    width: 580px;
+ }
+ #updateTitle, #updateContent, #updateCategory, #UpdatepostImage{
+     background-color: #eee;
+     position: absolute;
+     margin-top: 20px;
+     margin-left: 10px;
+     width: 580px;
+
  }
  #addDraft{
    margin-top: 400px;
@@ -74,32 +82,28 @@ background-color: black;
    margin-left: 220px;
    margin-top: -47px;
  }
- #updateTitle{
-  position: absolute;
-  margin-left: 30px;
-  margin-top: 20px;
- }
+
  #postContent, #updateContent{
    position: absolute;
    height: 350px;
    margin-top: 120px;
  }
  #postCategory, #updateCategory{
-   margin-top: -42px;
+   margin-top: 78px;
    margin-left: 350px;
    font-family: $oswald;
    width: 240px;
  }
- #postImage{
+ #postImage, #UpdatepostImage{
    margin-left: 10px;
    width: 300px;
    background-color: #eee;
    margin-top: 70px;
  }
-#publishPost, #addDraft{
+#publishPost, #addDraft, #updateDraft, #publishDraft{
  position: absolute;
- margin-left: 10px;
- margin-top: 370px;
+ margin-left: 20px;
+ margin-top: 490px;
  font-family: $oswald;
  background-color: $cloud;
 }
@@ -115,8 +119,24 @@ background-color: hsla(160, 67%, 51%, 1);
  background-color: black;
  box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
 }
+
 }
 
+#delete{
+  margin-top: 490px;
+  background-color: hsl(7,100,40);
+  margin-left: 20px;
+  font-family: $oswald;
+  &:hover{
+    box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+  }
+}
+#updateDraft{
+  &:hover{
+    box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+    background-color: black;
+  }
+}
 #signUp, #login{
  background-color: #eee;
  opacity: .8;
@@ -170,9 +190,24 @@ background-color: black;
  padding-top: 20px;
  margin-left: 500px;
  a{
-   color: hsl(201,8,52);
+   padding: 15px;
+   padding-bottom: 5px;
+   color: black;
+   font-family: $oswald;
+   font-size: 21px;
+   transition: color 0.2s ease;
+ }
+ a:hover{
+   color:hsl(7,100,40);
+  border-bottom: 3px solid hsl(7,100,40) ;
  }
 
+}
+.addBtn{
+  padding: 3px;
+  &:hover{
+    background-color: #eee;
+  }
 }
 
 .fullPost li{
@@ -549,7 +584,7 @@ input[type="checkbox"] {
   }
 }
 }
-.entypo-flight, .entypo-flag, .entypo-pencil{
+.entypo-flight, .entypo-plus, .entypo-flag, .entypo-pencil{
  padding-right: 7px;
 }
 .created{
@@ -558,4 +593,10 @@ input[type="checkbox"] {
   margin-left: 390px;
   font-family: $oswald;
   color: gray;
+}
+#loggedIn{
+  font-family: $oswald;
+  margin-left: 800px;
+
+margin-top: 30px;
 }
