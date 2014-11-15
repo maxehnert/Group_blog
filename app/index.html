@@ -50,7 +50,9 @@
 
 <!--comment template-->
     <script type="text/template" id="commentTemp">
-      <li><%= commentText %> </li>
+      <li><%= commentText %><br>
+      <p class="created"> <%=createdAt %> </p>
+      </li>
     </script>
 
 <!-- Modal Window -->
@@ -149,7 +151,6 @@
         </div>
          <h2 class="title">
           <%= title %>
-
          </h2>
           <h3 class="author">
           <a href="#/author/<%= authorid %>">@<%= author %></a>
@@ -166,7 +167,39 @@
 <!--this is the view for a single, uneditable post-->
 <script type="text/template" id="singlePostTemp">
   <li >
-    <div class="single-post-setup">
+       <div class="single-post-setup">
+
+            <h1 class = "singleTitle">
+            <%= title %>
+            </h1>
+             <h3 class="singleAuthor">
+        by <a href="#/author/<%= authorid %>"><%= author %> </a>
+            </h3>
+            <p class="singleCategory">
+    <span class="entypo-flight"></span>  <%= category %>
+           </p>
+           <div id="single-blog-image">
+               <img src="<%= image %>" />
+           </div>
+            <p class="singleContent">
+          <%= content %>
+          </p>
+
+        </div>
+
+      <div id="comment-form">
+      <form id="addComment">
+
+        <textarea id="commentText" placeholder="Add Your Comments"></textarea>
+        <button id="adder">Add Comment</button>
+      </form>
+     </div>
+
+
+
+  </li>
+
+<!--    <div class="single-post-setup">
       <div id="single-blog-image">
       <img src=" <%= image%>" />
       </div>
@@ -190,7 +223,7 @@
 </li>
     </div>
 
-
+-->
 </script>
 
 <!-- User Sign Up -->
