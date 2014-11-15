@@ -37,7 +37,7 @@
         <div id="blogList"></div>
         <div id="cat"></div>
         <div class="nav-bar">
-          <a href="#/add" class="addBtn"><button>Add</button></a>
+          <a href="#/add" class="addBtn"><button><span class="entypo-pencil"></span>Add</button></a>
           <a href="#/signUp"><button>sign up</button></a>
           <a href="#/login"><button>login</button></a>
           <a href="#/myPosts"><button>my posts</button></a>
@@ -47,6 +47,12 @@
         </div>
         <span id="loggedIn"></span>
       </div>
+
+<!--   <div class="sorts">
+       <a href="#/">Rating</a> &bull;
+        <a href="#/sort/title">Title</a> &bull;
+        <a href="#/sort/category">Category</a>
+      </div>-->
 
     </div><!--body container ends here-->
 
@@ -67,7 +73,9 @@
 
 <!--comment template-->
     <script type="text/template" id="commentTemp">
-      <li><%= commentText %> </li>
+      <li><%= commentText %><br>
+      <p class="created"> <%=createdAt %> </p>
+      </li>
     </script>
 
 <!-- Modal Window -->
@@ -87,10 +95,11 @@
 <!-- Add New Post-->
 <script type="text/template" id="addTemp">
   <form action="submit" id="addPost">
-    <input type="text" id="postTitle" required placeholder="Title">
+  <h2> Add New Post </h2>
+   <input type="text" id="postTitle" required placeholder="Title">
     <textarea  id="postContent" required placeholder="Content"></textarea>
 <!--         <input type="text" id="postCategory" required placeholder="Category"> -->
-    <input type="text" id="postImage" placeholder="image url">
+    <input type="text" id="postImage" placeholder="Image URL">
     <select name="select" id="postCategory">
       <option value="Just Visited">Just Visited</option>
       <option value="Current Trip">Current Trip</option>
@@ -99,7 +108,7 @@
     </select>
     <button id="publishPost">Publish Post</button>
   <!--  <button id="addDraft">Save as Draft</button>-->
-    <input type="checkbox" id="addDraft"> <label id="savedraft">Save as Draft</label>
+    <button id="addDraft">Save as Draft</button>
   </form>
 </script>
 
@@ -136,13 +145,19 @@
         </div>
         <h2 class="title">
           <%= title %>
-          <a href="#/author/<%= authorid %>"><%= author %></a>
         </h2>
-        <p class="other">
+        <h3 class="author">
+        <a href="#/author/<%= authorid %>">@<%= author %></a>
+        </h3>
+        <p class="category">
     <!--    <%= content %>-->
-        <%= updatedAt %>
-        <%= category %>
 
+        <span class="entypo-flight"></span><%= category %>
+        </p>
+  <% if(draft === true) { %>
+    <p class="draft-comment"><span class="entypo-flag"></span>Draft
+    </p>
+    <% } %>
         </p>
       </div>
     </a>
@@ -155,19 +170,20 @@
   <li id="<%=objectId%>">
     <a href="#/content/<%=objectId%>">
       <div class="post-setup">
-        <div id="blog-image">
+        <div id="blog-image-global">
         <img src=" <%= image%>" />
         </div>
          <h2 class="title">
           <%= title %>
           <a href="#/author/<%= authorid %>"><%= author %></a>
          </h2>
-          <p class="other">
+          <h3 class="author">
+          <a href="#/author/<%= authorid %>">@<%= author %></a>
+          </h3>
+          <p class="category">
         <!--  <%= content %>    content will not show in this list view-->
-
-           <%= createdAt %>
-          <%= category %>
-          <p>
+          <span class="entypo-flight"></span><%= category %>
+          </p>
       </div>
     </a>
   </li>
@@ -176,25 +192,63 @@
 <!--this is the view for a single, uneditable post-->
 <script type="text/template" id="singlePostTemp">
   <li >
-    <div class="post-setup">
+       <div class="single-post-setup">
+
+            <h1 class = "singleTitle">
+            <%= title %>
+            </h1>
+             <h3 class="singleAuthor">
+        by <a href="#/author/<%= authorid %>"><%= author %> </a>
+            </h3>
+            <p class="singleCategory">
+    <span class="entypo-flight"></span>  <%= category %>
+           </p>
+           <div id="single-blog-image">
+               <img src="<%= image %>" />
+           </div>
+            <p class="singleContent">
+          <%= content %>
+          </p>
+
+        </div>
+
+      <div id="comment-form">
+      <form id="addComment">
+
+        <textarea id="commentText" placeholder="Add Your Comments"></textarea>
+        <button id="adder">Add Comment</button>
+      </form>
+     </div>
+
+
+
+  </li>
+
+<!--    <div class="single-post-setup">
       <div id="single-blog-image">
       <img src=" <%= image%>" />
       </div>
       <h2 class="singleTitle">
         <%= title %>
       </h2>
+      <h3 class="singleAuthor">
+      by <a href="#/author/<%= authorid %>"><%= author %> </a>
+      </h3>
       <p class="singleCategory">
-      <%= category %>
+  <span class="entypo-flight"></span>  <%= category %>
       </p>
       <p class="singleContent">
         <%= content %>
       </p>
-        <form id="addComment">
-          <textarea id="commentText" placeholder="Add Your Comments"></textarea>
-          <button>Add Comment</button>
-        </form>
+
+<form id="addComment">
+  <textarea id="commentText" placeholder="Add Your Comments"></textarea>
+  <button id="adder">Add Comment</button>
+</form>
+</li>
     </div>
-  </li>
+
+-->
 </script>
 
 <!-- User Sign Up -->
@@ -202,6 +256,7 @@
   <form action="submit" id="signUp">
     <input type="text" id="signUpUser">
     <input type="password" id="signUpPassword"><br>
+
     <button>Sign Up</button>
   </form>
 </script>
