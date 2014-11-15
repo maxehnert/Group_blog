@@ -24,8 +24,7 @@
 
     this.$el.empty();
 
-    this.$el.html(this.template(this.options.post.toJSON()));
-
+    this.$el.html(this.template(this.options.toJSON()));
     },
 
 

@@ -52,6 +52,7 @@
         author: App.user.attributes.username,
         authorid: App.user.id,
         draft: draft
+        //time: moment().format('YYYY [escaped] YYYY')
 
       });
 

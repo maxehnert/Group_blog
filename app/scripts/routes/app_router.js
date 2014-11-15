@@ -50,6 +50,7 @@
       new App.Views.FullContentView({ post: p});
     },
     globalPosts: function(sortby){
+      new App.Views.CategorySelect({collection: App.posts, sort: App.category});
       new App.Views.GlobalListPosts({collection: App.posts, sort: sortby});
     }
 
