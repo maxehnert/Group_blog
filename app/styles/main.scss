@@ -1,4 +1,4 @@
- // Bourbon & Neat
+// Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/bitters/app/assets/stylesheets/base';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
@@ -10,278 +10,278 @@ $oswald:'Oswald', sans-serif;
 
 /* entypo */
 [class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
+ font-family: 'entypo', sans-serif;
 }
 // Custom Styles
 body {
 //  background-color: green;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 .body-container{
 //height: 1000px;  background-image:url("../images/28H.jpg");
-  background-size: cover;
+ background-size: cover;
 
 }
 .hero-unit {
-  width: 100%;
-  border-radius: 6px;
-  padding: 20px;
-  h1 {
-    font-size: 100px;
-    line-height: 1;
-    text-align: center;
-    letter-spacing: -1px;
-  }
-  a{
-    text-decoration: none;
-    color: hsl(201,8,52);
-  }
+ width: 100%;
+ border-radius: 6px;
+ padding: 20px;
+ h1 {
+   font-size: 100px;
+   line-height: 1;
+   text-align: center;
+   letter-spacing: -1px;
+ }
+ a{
+   text-decoration: none;
+   color: hsl(201,8,52);
+ }
 }
 #loginField{
-  position: absolute;
-  margin-left: -600px;
+ position: absolute;
+ margin-left: -600px;
 }
 #addPost, #updatePost{
-  background-color: white;
-  opacity: .9;
-  border: 1px solid gray;
-  width: 600px;
-  height: 600px;
-  margin-left: 150px;
-  position: relative;
-  display: block;
-  h2{
-    font-family: $oswald;
-    margin-left: 10px;
-    margin-top: 10px;
-  }
-  #postTitle{
-    font-family: $oswald;
-  }
-  #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory{
-    background-color: #eee;
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 10px;
-    width: 580px;
-  }
-  #addDraft{
-    margin-top: 400px;
-  }
-  #savedraft{
-    position: absolute;
-    margin-left: 220px;
-    margin-top: -47px;
-  }
-  #updateTitle{
+ background-color: white;
+ opacity: .9;
+ border: 1px solid gray;
+ width: 600px;
+ height: 600px;
+ margin-left: 150px;
+ position: relative;
+ display: block;
+ h2{
+   font-family: $oswald;
+   margin-left: 10px;
+   margin-top: 10px;
+ }
+ #postTitle{
+   font-family: $oswald;
+ }
+ #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory{
+   background-color: #eee;
    position: absolute;
-   margin-left: 30px;
    margin-top: 20px;
-  }
-  #postContent, #updateContent{
-    position: absolute;
-    height: 350px;
-    margin-top: 120px;
-  }
-  #postCategory, #updateCategory{
-    margin-top: -42px;
-    margin-left: 350px;
-    font-family: $oswald;
-    width: 240px;
-  }
-  #postImage{
-    margin-left: 10px;
-    width: 300px;
-    background-color: #eee;
-    margin-top: 70px;
-  }
-#publishPost, #addDraft{
+   margin-left: 10px;
+   width: 580px;
+ }
+ #addDraft{
+   margin-top: 400px;
+ }
+ #savedraft{
+   position: absolute;
+   margin-left: 220px;
+   margin-top: -47px;
+ }
+ #updateTitle{
   position: absolute;
-  margin-left: 320px;
-  margin-top: 370px;
-  font-family: $oswald;
-  background-color: $cloud;
+  margin-left: 30px;
+  margin-top: 20px;
+ }
+ #postContent, #updateContent{
+   position: absolute;
+   height: 350px;
+   margin-top: 120px;
+ }
+ #postCategory, #updateCategory{
+   margin-top: -42px;
+   margin-left: 350px;
+   font-family: $oswald;
+   width: 240px;
+ }
+ #postImage{
+   margin-left: 10px;
+   width: 300px;
+   background-color: #eee;
+   margin-top: 70px;
+ }
+#publishPost, #addDraft{
+ position: absolute;
+ margin-left: 10px;
+ margin-top: 370px;
+ font-family: $oswald;
+ background-color: $cloud;
 }
 #publishPost:hover{
-  background-color: black;
+ background-color: black;
 }
 #addDraft{
- margin-left: 170px;
- background-color: hsla(160, 67%, 51%, 1);
+margin-left: 170px;
+background-color: hsla(160, 67%, 51%, 1);
 }
 #addDraft:hover{
-  background-color: black;
+ background-color: black;
 }
 }
 
 #signUp, #login{
-  background-color: #eee;
-  opacity: .8;
-  display: block;
-  padding: 5px;
-  width: 200px;
-  border: 1px solid gray;
-  margin-left: 800px;
-  #signUpUser, #user{
-    margin-top: 10px;
-  }
-  #signUpPassword, #password{
-    margin-top: 10px;
-  }
-  button{
-    margin-top: 25px;
-  }
-  #signUpAvatar{
-    margin-top: 17px;
-  }
+ background-color: #eee;
+ opacity: .8;
+ display: block;
+ padding: 5px;
+ width: 200px;
+ border: 1px solid gray;
+ margin-left: 800px;
+ #signUpUser, #user{
+   margin-top: 10px;
+ }
+ #signUpPassword, #password{
+   margin-top: 10px;
+ }
+ button{
+   margin-top: 25px;
+ }
+ #signUpAvatar{
+   margin-top: 17px;
+ }
 }
 #blogList{
- position: absolute;
- margin-top: 300px;
+position: absolute;
+margin-top: 300px;
 }
 .addPosts li{
-  height: 200px;
-  list-style-type: none;
-  margin-left: 100px;
-  width: 800px;
-  margin-top: 15px;
-  list-style-type:none;
-  //border: 1px solid gray;
- background-color: black;
-  opacity: .6;
-  padding: 10px;
+ height: 200px;
+ list-style-type: none;
+ margin-left: 100px;
+ width: 800px;
+ margin-top: 15px;
+ list-style-type:none;
+ //border: 1px solid gray;
+background-color: black;
+ opacity: .6;
+ padding: 10px;
 //  transition: opacity 0.2s ease;
-  &:hover{
-   opacity: .7;
-   box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
-  }
-  a{
-    text-decoration: none;
-    color: white;
-  }
+ &:hover{
+  opacity: .7;
+  box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+ }
+ a{
+   text-decoration: none;
+   color: white;
+ }
 
 }
 
 .nav-bar{
-  position: absolute;
-  padding-top: 20px;
-  margin-left: 500px;
-  a{
-    color: hsl(201,8,52);
-  }
+ position: absolute;
+ padding-top: 20px;
+ margin-left: 500px;
+ a{
+   color: hsl(201,8,52);
+ }
 
 }
 .single-post-setup{
-  position: relative;
- margin-left: 100px;
-  margin-top: -25px;
-  width: 800px;
-  opacity: .8;
-  background-color: white;
+ position: relative;
+margin-left: 100px;
+ margin-top: -25px;
+ width: 800px;
+ opacity: .8;
+ background-color: white;
 
-  .singleTitle{
-    position: absolute;
-  //  margin-left: 100px;
-    font-size: 60px;
-    padding-left: 5px;
-    font-family: $oswald;
-    width: 600px;
+ .singleTitle{
+   position: absolute;
+ //  margin-left: 100px;
+   font-size: 60px;
+   padding-left: 5px;
+   font-family: $oswald;
+   width: 600px;
 
-  }
-  .singleCategory{
-    position: absolute;
-    width: 300px;
-    padding-left: 5px;
-    font-family: $oswald;
-    margin-top: 120px;
-  }
-  .singleContent{
-    position: absolute;
-    padding-left: 10px;
-    width: 800px;
-    text-align: left;
-    background-color: white;
-    margin-top: 690px;
-    //height: 400px;
-  }
-  #single-blog-image{
-    height: 500px;
-    width: 790px;
-    margin-left: 5px;
-    position: absolute;
-    margin-top: 170px;
-    //position: absolute;
-    background-color:  hsl(201,8,52);
-    img{
-      height: 500px;
-      width: 790px;
-    }
-  }
-  .singleAuthor{
-    position: absolute;
-    font-family: $oswald;
-    margin-top: 80px;
-    padding-left: 5px;
-    a{
-      color: black;
-    }
-  }
+ }
+ .singleCategory{
+   position: absolute;
+   width: 300px;
+   padding-left: 5px;
+   font-family: $oswald;
+   margin-top: 120px;
+ }
+ .singleContent{
+   position: absolute;
+   padding-left: 10px;
+   width: 800px;
+   text-align: left;
+   background-color: white;
+   margin-top: 690px;
+   //height: 400px;
+ }
+ #single-blog-image{
+   height: 500px;
+   width: 790px;
+   margin-left: 5px;
+   position: absolute;
+   margin-top: 170px;
+   //position: absolute;
+   background-color:  hsl(201,8,52);
+   img{
+     height: 500px;
+     width: 790px;
+   }
+ }
+ .singleAuthor{
+   position: absolute;
+   font-family: $oswald;
+   margin-top: 80px;
+   padding-left: 5px;
+   a{
+     color: black;
+   }
+ }
 }
 
 
 
 .post-setup{
-  position: relative;
-  height: 120px;
+ position: relative;
+ height: 120px;
 
-  .title{
-    position: absolute;
-    margin-left: 210px;
-    margin-top: 10px;
+ .title{
+   position: absolute;
+   margin-left: 210px;
+   margin-top: 10px;
 
-    font-size: 40px;
-    font-family: $oswald;
-  }
+   font-size: 40px;
+   font-family: $oswald;
+ }
 
-  .author a{
-    position: absolute;
-    margin-left: 210px;
-    margin-top: 100px;
-    font-size: 20px;
-    color: white;
-    font-family: $oswald;
-  }
-  .category{
-    position: absolute;
-    margin-left: 210px;
-    color: gray;
-    font-size: 20px;
-    font-family: $oswald;
-    width: 300px;
-    margin-top: 130px;
-  }
-  .draft-comment{
-    position: absolute;
-    margin-left: 720px;
-    margin-top: 134px;
-    font-family: $oswald;
-    font-size: 20px;
-    color: white;
-    width: 70px;
-    text-align: center;
-    background-color:red;
-  }
+ .author a{
+   position: absolute;
+   margin-left: 210px;
+   margin-top: 100px;
+   font-size: 20px;
+   color: white;
+   font-family: $oswald;
+ }
+ .category{
+   position: absolute;
+   margin-left: 210px;
+   color: gray;
+   font-size: 20px;
+   font-family: $oswald;
+   width: 300px;
+   margin-top: 130px;
+ }
+ .draft-comment{
+   position: absolute;
+   margin-left: 720px;
+   margin-top: 134px;
+   font-family: $oswald;
+   font-size: 20px;
+   color: white;
+   width: 70px;
+   text-align: center;
+   background-color:red;
+ }
 
-  #addComment{
-    position: absolute;
-  //  margin-left: 250px;
-    //width: 200px;
-  }
+ #addComment{
+   position: absolute;
+ //  margin-left: 250px;
+   //width: 200px;
+ }
 }
 #commentText{
-  border: 6px solid yellow;
-  margin-top: 1000px;
+ border: 6px solid yellow;
+ margin-top: 1000px;
 }
 
 #adder{
@@ -290,234 +290,234 @@ body {
 
 
 #blog-image{
-  height: 200px;
-  width: 200px;
-  margin-top: -22px;
-  margin-left: -10px;
-  position: absolute;
-  background-color:  hsl(201,8,52);
-  img{
-  height: 200px;
-  width: 200px;
-  }
+ height: 200px;
+ width: 200px;
+ margin-top: -22px;
+ margin-left: -10px;
+ position: absolute;
+ background-color:  hsl(201,8,52);
+ img{
+ height: 200px;
+ width: 200px;
+ }
 
 }
 
 #blog-image-global{
-  height: 200px;
-  width: 200px;
-  margin-top: -11px;
-  margin-left: -10px;
-  position: absolute;
-  background-color:  hsl(201,8,52);
-  img{
-  height: 200px;
-  width: 200px;
-  }
+ height: 200px;
+ width: 200px;
+ margin-top: -11px;
+ margin-left: -10px;
+ position: absolute;
+ background-color:  hsl(201,8,52);
+ img{
+ height: 200px;
+ width: 200px;
+ }
 
 }
 
 
 //Modal window
 .modal {
-  $modal-padding: 3em;
-  $modal-background: $base-background-color;
-  $modal-close-color: $light-gray;
-  $modal-image-height: 135px;
-  $modal-image-width: $modal-image-height;
+ $modal-padding: 3em;
+ $modal-background: $base-background-color;
+ $modal-close-color: $light-gray;
+ $modal-image-height: 135px;
+ $modal-image-width: $modal-image-height;
 
 /*   label {
-  cursor: pointer;
-  margin-bottom: 0;
+ cursor: pointer;
+ margin-bottom: 0;
 }
 
 label img {
-  \$img-width: 300px;
-  border-radius: \$img-width/2;
-  display: block;
-  max-width: \$img-width;
+ \$img-width: 300px;
+ border-radius: \$img-width/2;
+ display: block;
+ max-width: \$img-width;
 }
 
 input[type="checkbox"] {
-  display: none;
+ display: none;
 }
 
 .btn {
-  @extend button;
+ @extend button;
 }
 
 .modal-open {
-  overflow: hidden;
+ overflow: hidden;
 } */
 
-  .modal-window { // overlay
-    @include transition(opacity .25s ease);
-    @include position(fixed, 0px 0px 0px 0px);
-    background: rgba(0,0,0, .85);
-    opacity: 0;
-    text-align: left;
-    visibility: hidden;
-    z-index: 99999999999;
+ .modal-window { // overlay
+   @include transition(opacity .25s ease);
+   @include position(fixed, 0px 0px 0px 0px);
+   background: rgba(0,0,0, .85);
+   opacity: 0;
+   text-align: left;
+   visibility: hidden;
+   z-index: 99999999999;
 
-    .modal-bg {
-      @include position(absolute, 0px 0px 0px 0px);
-      cursor: pointer;
-    }
-  }
+   .modal-bg {
+     @include position(absolute, 0px 0px 0px 0px);
+     cursor: pointer;
+   }
+ }
 
-  .modal-close {
-    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
-    @include size(1.5em);
-    cursor: pointer;
-    background: $modal-background;
+ .modal-close {
+   @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+   @include size(1.5em);
+   cursor: pointer;
+   background: $modal-background;
 
-    &:after,
-    &:before {
-      @include position(absolute, 3px 3px 0 50%);
-      @include transform(rotate(45deg));
-      @include size(.15em 1.5em);
-      background: $modal-close-color;
-      content: '';
-      display: block;
-      margin: -3px 0 0 -1px;
-    }
+   &:after,
+   &:before {
+     @include position(absolute, 3px 3px 0 50%);
+     @include transform(rotate(45deg));
+     @include size(.15em 1.5em);
+     background: $modal-close-color;
+     content: '';
+     display: block;
+     margin: -3px 0 0 -1px;
+   }
 
-    &:hover:after,
-    &:hover:before {
-      background: darken($modal-close-color, 10);
-    }
+   &:hover:after,
+   &:hover:before {
+     background: darken($modal-close-color, 10);
+   }
 
-    &:before {
-      @include transform(rotate(-45deg));
-    }
-  }
+   &:before {
+     @include transform(rotate(-45deg));
+   }
+ }
 
-  .modal-inner {
-    @include transition(opacity .25s ease);
-    border-radius: $base-border-radius;
-    background: $modal-background;
-    margin: auto;
-    max-height: 95%;
-    position: relative;
-    overflow: auto;
-    width: 95%;
-    padding: $modal-padding /2;
-    margin-top: .6em;
+ .modal-inner {
+   @include transition(opacity .25s ease);
+   border-radius: $base-border-radius;
+   background: $modal-background;
+   margin: auto;
+   max-height: 95%;
+   position: relative;
+   overflow: auto;
+   width: 95%;
+   padding: $modal-padding /2;
+   margin-top: .6em;
 
-    @include media($medium-screen) {
-      padding: $modal-padding;
-      width: 60%;
-      max-height: 60%;
-      margin-top: 10em;
-    }
+   @include media($medium-screen) {
+     padding: $modal-padding;
+     width: 60%;
+     max-height: 60%;
+     margin-top: 10em;
+   }
 
-    @include media($large-screen) {
-      width: 50%;
-      margin-top: 10em;
-    }
+   @include media($large-screen) {
+     width: 50%;
+     margin-top: 10em;
+   }
 
-    h1 {
-      color: $base-font-color;
-      margin-bottom: .6em;
-      text-align: left;
-      text-transform: capitalize;
-    }
+   h1 {
+     color: $base-font-color;
+     margin-bottom: .6em;
+     text-align: left;
+     text-transform: capitalize;
+   }
 
-    p.body, p.intro {
-      font-size: $base-font-size;
-      max-width: 100% !important;
-      text-align: left;
+   p.body, p.intro {
+     font-size: $base-font-size;
+     max-width: 100% !important;
+     text-align: left;
 
-      &.intro {
-        color: $blue;
-        line-height: 1.6em;
-      }
+     &.intro {
+       color: $blue;
+       line-height: 1.6em;
+     }
 
-      &.body {
-        color: $base-font-color;
-        line-height: 1.45em;
+     &.body {
+       color: $base-font-color;
+       line-height: 1.45em;
 
-        @include media($medium-screen) {
-          @include columns(2 8em);
-        }
-      }
-    }
+       @include media($medium-screen) {
+         @include columns(2 8em);
+       }
+     }
+   }
 
-    a.cta {
-      color: white;
-      display: inline-block;
-      margin-right: .5em;
-      margin-top: 1em;
+   a.cta {
+     color: white;
+     display: inline-block;
+     margin-right: .5em;
+     margin-top: 1em;
 
-      &:last-child {
-        padding: 0 2em;
-      }
-    }
-  }
+     &:last-child {
+       padding: 0 2em;
+     }
+   }
+ }
 
-  .modal-state:checked + .modal-window {
-    opacity: 1;
-    visibility: visible;
-  }
+ .modal-state:checked + .modal-window {
+   opacity: 1;
+   visibility: visible;
+ }
 
-  .modal-state:checked + .modal-window .modal-inner {
-    top: 0;
-  }
+ .modal-state:checked + .modal-window .modal-inner {
+   top: 0;
+ }
 }
 
 // end modal window
 
 .topbanner{
 
-  height: 1800px;
-  //opacity: .3;
-  background-image: url("../images/vang.jpg");
-  background-size: cover;
-  position: relative;
-  background-attachment:fixed;
-  h1 a{
-  position:absolute;
-  color: red;
-  margin-left: 100px;
-  font-size: 90px;
-  font-family: $oswald;
-  margin-top: 150px;
+ height: 1800px;
+ //opacity: .3;
+ background-image: url("../images/vang.jpg");
+ background-size: cover;
+ position: relative;
+ background-attachment:fixed;
+ h1 a{
+ position:absolute;
+ color: red;
+ margin-left: 100px;
+ font-size: 90px;
+ font-family: $oswald;
+ margin-top: 150px;
 }
 }
 .header{
 
-  background-color: green;
-  position: absolute;
-  opacity: .2;
-  height: 1800px;
+ background-color: green;
+ position: absolute;
+ opacity: .2;
+ height: 1800px;
 //  margin-top: 100px;
-  width: 100%;
+ width: 100%;
 
 }
 
 #commentBox{
-  position: absolute;
-  margin-top: 200px;
-  width: 300px;
-  margin-left: 200px;
+ position: absolute;
+ margin-top: 200px;
+ width: 300px;
+ margin-left: 200px;
 }
 #commentbutton{
-  position: absolute;
-  margin-top: 290px;
-  margin-left: 200px;
+ position: absolute;
+ margin-top: 290px;
+ margin-left: 200px;
 }
 
 .comment-section{
-  margin-left: 200px;
-  width: 600px;
-  position: absolute;
-  border: 2px solid yellow;
+ margin-left: 200px;
+ width: 600px;
+ position: absolute;
+ border: 2px solid yellow;
 //  margin-top: 100px;
-  color: white;
+ color: white;
 .comments ul li{
-  border: 2px dashed red;
+ border: 2px dashed red;
 }
 }
 .entypo-flight, .entypo-flag, .entypo-pencil{
-  padding-right: 7px;
+ padding-right: 7px;
 }
