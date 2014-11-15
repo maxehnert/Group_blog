@@ -5,7 +5,7 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
 $neongreen: hsla(158, 100%, 50%, 1);
-
+$cloud: hsl(160,16,51);
 $oswald:'Oswald', sans-serif;
 
 /* entypo */
@@ -43,19 +43,28 @@ body {
   margin-left: -600px;
 }
 #addPost, #updatePost{
-  background-color: #eee;
+  background-color: white;
   opacity: .9;
   border: 1px solid gray;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   margin-left: 150px;
   position: relative;
   display: block;
-  #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory, #addDraft{
+  h2{
+    font-family: $oswald;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  #postTitle{
+    font-family: $oswald;
+  }
+  #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory{
+    background-color: #eee;
     position: absolute;
     margin-top: 20px;
-    margin-left: 30px;
-    width: 430px;
+    margin-left: 10px;
+    width: 580px;
   }
   #addDraft{
     margin-top: 400px;
@@ -72,20 +81,38 @@ body {
   }
   #postContent, #updateContent{
     position: absolute;
-    height: 250px;
-    margin-top: 80px;
+    height: 350px;
+    margin-top: 120px;
   }
   #postCategory, #updateCategory{
-    margin-top: 350px;
+    margin-top: -42px;
+    margin-left: 350px;
+    font-family: $oswald;
+    width: 240px;
   }
   #postImage{
-    margin-left: 30px;
-    width: 140px;
+    margin-left: 10px;
+    width: 300px;
+    background-color: #eee;
+    margin-top: 70px;
   }
-  button{
-    margin-left: 30px;
-    margin-top: 400px;
-  }
+#publishPost, #addDraft{
+  position: absolute;
+  margin-left: 320px;
+  margin-top: 370px;
+  font-family: $oswald;
+  background-color: $cloud;
+}
+#publishPost:hover{
+  background-color: black;
+}
+#addDraft{
+ margin-left: 170px;
+ background-color: hsla(160, 67%, 51%, 1);
+}
+#addDraft:hover{
+  background-color: black;
+}
 }
 
 #signUp, #login{
@@ -458,7 +485,7 @@ input[type="checkbox"] {
 }
 }
 .header{
-  border: 4px dashed yellow;
+
   background-color: green;
   position: absolute;
   opacity: .2;
@@ -491,6 +518,6 @@ input[type="checkbox"] {
   border: 2px dashed red;
 }
 }
-.entypo-flight, .entypo-flag{
+.entypo-flight, .entypo-flag, .entypo-pencil{
   padding-right: 7px;
 }

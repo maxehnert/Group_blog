@@ -31,7 +31,7 @@
         <div class="header"></div>
         <div id="blogList"></div>
         <div class="nav-bar">
-          <a href="#/add" class="addBtn"><button>Add</button></a>
+          <a href="#/add" class="addBtn"><button><span class="entypo-pencil"></span>Add</button></a>
           <a href="#/signUp"><button>sign up</button></a>
           <a href="#/login"><button>login</button></a>
           <a href="#/myPosts"><button>my posts</button></a>
@@ -70,10 +70,11 @@
 <!-- Add New Post-->
 <script type="text/template" id="addTemp">
   <form action="submit" id="addPost">
-    <input type="text" id="postTitle" required placeholder="Title">
+  <h2> Add New Post </h2>
+   <input type="text" id="postTitle" required placeholder="Title">
     <textarea  id="postContent" required placeholder="Content"></textarea>
 <!--         <input type="text" id="postCategory" required placeholder="Category"> -->
-    <input type="text" id="postImage" placeholder="image url">
+    <input type="text" id="postImage" placeholder="Image URL">
     <select name="select" id="postCategory">
       <option value="Just Visited">Just Visited</option>
       <option value="Current Trip">Current Trip</option>
@@ -82,7 +83,7 @@
     </select>
     <button id="publishPost">Publish Post</button>
   <!--  <button id="addDraft">Save as Draft</button>-->
-    <input type="checkbox" id="addDraft"> <label id="savedraft">Save as Draft</label>
+    <button id="addDraft">Save as Draft</button>
   </form>
 </script>
 
@@ -181,6 +182,7 @@
       <p class="singleContent">
         <%= content %>
       </p>
+
 <form id="addComment">
   <textarea id="commentText" placeholder="Add Your Comments"></textarea>
   <button id="adder">Add Comment</button>
