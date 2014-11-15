@@ -18,10 +18,8 @@
     addUser: function(e){
       e.preventDefault();
       var user = new Parse.User({
-
       username: $('#signUpUser').val(),
       password: $('#signUpPassword').val()
-    
 
       });
       user.signUp(null, {

@@ -123,8 +123,10 @@ body {
  background-color: black;
   opacity: .6;
   padding: 10px;
+//  transition: opacity 0.2s ease;
   &:hover{
    opacity: .7;
+   box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
   }
   a{
     text-decoration: none;
@@ -225,11 +227,14 @@ body {
   }
   .draft-comment{
     position: absolute;
-    margin-left: 200px;
-    margin-top: 120px;
+    margin-left: 720px;
+    margin-top: 134px;
     font-family: $oswald;
-    font-size: 25px;
-    color:red;
+    font-size: 20px;
+    color: white;
+    width: 70px;
+    text-align: center;
+    background-color:red;
   }
 
   #addComment{
@@ -251,8 +256,8 @@ body {
 #blog-image{
   height: 200px;
   width: 200px;
- margin-top: -10px;
-  margin-left: -8px;
+  margin-top: -22px;
+  margin-left: -10px;
   position: absolute;
   background-color:  hsl(201,8,52);
   img{
@@ -262,6 +267,19 @@ body {
 
 }
 
+#blog-image-global{
+  height: 200px;
+  width: 200px;
+  margin-top: -11px;
+  margin-left: -10px;
+  position: absolute;
+  background-color:  hsl(201,8,52);
+  img{
+  height: 200px;
+  width: 200px;
+  }
+
+}
 
 
 //Modal window
@@ -464,6 +482,6 @@ input[type="checkbox"] {
   border: 2px dashed red;
 }
 }
-.entypo-flight{
+.entypo-flight, .entypo-flag{
   padding-right: 7px;
 }

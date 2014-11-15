@@ -119,18 +119,19 @@
         </div>
         <h2 class="title">
           <%= title %>
-          <a href="#/author/<%= authorid %>">@<%= author %></a>
         </h2>
-        <p class="other">
+        <h3 class="author">
+        <a href="#/author/<%= authorid %>">@<%= author %></a>
+        </h3>
+        <p class="category">
     <!--    <%= content %>-->
-        <%= createdAt %>
-        <%= category %>
-<!--  <% if(draft === true) { %>
-    <p class="draft-comment">
-    Draft
+        <span class="entypo-flight"></span><%= category %>
+        </p>
+  <% if(draft === true) { %>
+    <p class="draft-comment"><span class="entypo-flag"></span>Draft
     </p>
     <% } %>
-        </p>-->
+        </p>
       </div>
     </a>
   </li>
@@ -142,7 +143,7 @@
   <li id="<%=objectId%>">
     <a href="#/content/<%=objectId%>">
       <div class="post-setup">
-        <div id="blog-image">
+        <div id="blog-image-global">
         <img src=" <%= image%>" />
         </div>
          <h2 class="title">
