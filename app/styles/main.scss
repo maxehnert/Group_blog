@@ -100,7 +100,7 @@ background-color: black;
    background-color: #eee;
    margin-top: 70px;
  }
-#publishPost, #addDraft, #updateDraft, #publishDraft{
+#publishPost, #addDraft, #updateDraft{
  position: absolute;
  margin-left: 20px;
  margin-top: 490px;
@@ -114,14 +114,25 @@ background-color: black;
 #addDraft{
 margin-left: 170px;
 background-color: hsla(160, 67%, 51%, 1);
+color: black;
 }
 #addDraft:hover{
- background-color: black;
+
  box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
 }
 
 }
-
+#publishDraft{
+  position: absolute;
+  margin-left: 120px;
+  margin-top: 490px;
+  font-family: $oswald;
+  background-color: $neongreen;
+  color: black;
+  &:hover{
+    box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+  }
+}
 #delete{
   margin-top: 490px;
   background-color: hsl(7,100,40);
