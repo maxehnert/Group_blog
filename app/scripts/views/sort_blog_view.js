@@ -5,7 +5,8 @@
     tagName: 'div',
 
     events: {
-      'click .dropdown-button' : 'dropDown'
+      'click .dropdown-button' : 'dropDown',
+      'click li' : 'navigate'
     },
 
 
@@ -24,14 +25,19 @@ render: function () {
 this.$el.empty();
   this.$el.html($('#sortingTemp').html());
 },
-    dropDown: function(){
-      $(".menu").toggleClass("show-menu");
-      $(".menu > li").click(function(){
-        $(".dropdown-button").html($(this).html());
-        $(".menu").removeClass("show-menu");
-      });
+dropDown: function(){
+  $(".menu").toggleClass("show-menu");
+  $(".menu > li").click(function(){
+    $(".dropdown-button").html($(this).html());
+    $(".menu").removeClass("show-menu");
+  });
 
-    }
+},
+navigate: function(){
+  this.collection.sortBy( function (model){
+    return model.get(self.options.sort);
+  });
+}
 
   });
 }());

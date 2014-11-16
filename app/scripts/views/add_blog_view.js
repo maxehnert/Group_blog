@@ -9,10 +9,12 @@
     initialize: function(){
       this.render();
 
+
       $('#blogList').html(this.$el);
     },
     render: function(){
       this.$el.html($('#addTemp').html());
+      $('#cat').empty();
 
     },
     // addPost: function(e){

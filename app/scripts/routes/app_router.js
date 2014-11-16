@@ -2,7 +2,7 @@
   App.Routers.AppRouter = Parse.Router.extend({
 
     routes: {
-      '' : 'home',
+      '' : 'globalPosts',
       "edit/:postID" : 'editPost',
       'add' : 'addPost',
       'login' : 'userLogin',
@@ -10,7 +10,7 @@
       'content/:postID' : 'fullPost',
       'globalPosts' : 'globalPosts',
       'myPosts' : 'myPosts',
-      '' : 'land',
+      // '' : 'land',
       'sort/:sortby' : 'globalPosts'
 
 
@@ -38,6 +38,7 @@
     },
     userLogin: function(){
       new App.Views.LoginView();
+      new App.Views.SignUpView();
     },
     userSignUp: function(){
       new App.Views.SignUpView();

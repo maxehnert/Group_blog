@@ -12,11 +12,13 @@ App.Views.FullContentView = Parse.View.extend({
     this.options = options;
     this.post = this.options.post;
 
+    $('#cat').empty();
+
     this.render();
     $('#blogList').html(this.$el);
   },
   render: function(){
-  this.$el.empty();  
+  this.$el.empty();
 
   this.$el.html(this.template(this.post.toJSON()));
 

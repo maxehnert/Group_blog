@@ -3,12 +3,12 @@
   App.Views.SignUpView = Parse.View.extend({
 
     events: {
-      'submit #signUp' : 'addUser'
+      'click .js-btn' : 'addUser'
     },
     initialize: function(){
       this.render();
 
-      $('#loginField').html(this.$el);
+      $('#signUpField').html(this.$el);
     },
 
     render: function(){

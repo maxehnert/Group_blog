@@ -16,7 +16,7 @@
 
       this.collection.off();
       this.collection.on('sync', this.postQuery, this);
-
+      $('#cat').empty();
       $('#blogList').html(this.$el);
 
       this.postQuery();

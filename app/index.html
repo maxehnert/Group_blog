@@ -26,16 +26,11 @@
   <body>
     <div id="loginModal"></div>
     <div class="body-container">
-      <div class="sorts">
-        <!-- <a href="#/">Rating</a> &bull; -->
-        <a href="#/sort/title">Title</a> &bull;
-        <a href="#/sort/category">Category</a>
-      </div>
       <div class="topbanner">
         <h1><a href="#/">travelblog</a></h1>
         <div class="header"></div>
         <div id="blogList"></div>
-        <div id="cat"></div>
+
         <div class="nav-bar">
           <a href="#/add" class="addBtn"><button><span class="entypo-pencil"></span>Add</button></a>
           <a href="#/signUp"><button>sign up</button></a>
@@ -43,9 +38,31 @@
           <a href="#/myPosts"><button>my posts</button></a>
           <button id="log-out-btn">log out</button>
           <a href="#/globalPosts"><button>global posts</button></a>
-          <div id="loginField"></div>
+
+          <div class="modal">
+          <a href="#/login">  <label for="modal-1">
+              <div class="btn js-btn">Click for Modal</div>
+            </label></a>
+            <input class="modal-state" id="modal-1" type="checkbox" />
+            <div class="modal-window">
+                <div class="modal-inner">
+                  <label class="modal-close" for="modal-1"></label>
+                  <h1></h1>
+                  <!-- <p class="intro">Intro </p> -->
+                  <div class="body">
+
+                    <div id="signUpField"></div>
+                    <div id="loginField"></div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div id="cat"></div>
+
         </div>
         <span id="loggedIn"></span>
+
       </div>
 
 <!--   <div class="sorts">
@@ -59,10 +76,10 @@
 <script type="text/template" id="sortingTemp">
 <div class="dropdown">
   <div class="dropdown-container">
-    <p class="dropdown-description">Description</p>
-    <p class="dropdown-button">Click to Select a Category</p>
+
+    <p class="dropdown-button">Select a Category</p>
     <ul class="menu">
-      <li><a href="#/sort/:sortby">Current Trip</a></li>
+      <li><a href="#/sort/sortby">Current Trip</a></li>
       <li><a href="#/sort/Future Trip">Future Trip</a></li>
       <li>Item Three</li>
       <li>The Last One</li>
@@ -79,8 +96,12 @@
     </script>
 
 <!-- Modal Window -->
-<script type="text/template" id="modalTemp">
+<!-- <script type="text/template" id="modalTemp">
   <div class="modal">
+    <label for="modal-1">
+      <div class="btn js-btn">Click for Modal</div>
+    </label>
+    <input class="modal-state" id="modal-1" type="checkbox" />
     <div class="modal-window">
         <div class="modal-inner">
           <label class="modal-close" for="modal-1"></label>
@@ -90,7 +111,7 @@
         </div>
     </div>
   </div>
-</script>
+</script> -->
 
 <!-- Add New Post-->
 <script type="text/template" id="addTemp">
@@ -251,6 +272,9 @@
 -->
 </script>
 
+
+
+
 <!-- User Sign Up -->
 <script type="text/template" id="SignUpTemp">
   <form action="submit" id="signUp">
@@ -269,6 +293,7 @@
     <button>Login</button>
   </form>
 </script>
+
 
 
 

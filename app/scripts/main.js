@@ -9,11 +9,7 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
   App.posts.fetch().done( function(){
     App.router = new App.Routers.AppRouter();
       //Parse.history.start();
-
-
   });
-
-
 
   $('#logOut').on('click', function (e){
     e.preventDefault();
@@ -21,13 +17,13 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
     App.router.navigate('', {trigger: true});
   });
 
-$('#log-out-btn').on('click', function(e){
-e.preventDefault();
-Parse.User.logOut();
-App.updateUser();
-console.log('we logged out');
-App.router.navigate('', {trigger: true});
-});
+  $('#log-out-btn').on('click', function(e){
+  e.preventDefault();
+  Parse.User.logOut();
+  App.updateUser();
+  console.log('we logged out');
+  App.router.navigate('', {trigger: true});
+  });
 
 // Update User
   App.updateUser = function (){
@@ -43,7 +39,5 @@ App.router.navigate('', {trigger: true});
     $('#loggedIn').html(currUsr);
   };
   App.updateUser();
-
-
 
 }());
