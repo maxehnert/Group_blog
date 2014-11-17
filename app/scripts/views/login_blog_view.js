@@ -3,8 +3,8 @@
   App.Views.LoginView = Parse.View.extend({
     //classNAme???
     events: {
-      // 'submit #login' : 'userLogin'
-      'click .js-btn' : 'userLogin'
+      'submit #login' : 'userLogin'
+      //'click .js-btn' : 'userLogin'
     },
     initialize: function(){
       this.render();
@@ -31,6 +31,7 @@
           console.log('were logged in');
         }
       });
+      $('.modal').empty();
     }
 
   });

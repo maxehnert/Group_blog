@@ -3,7 +3,8 @@
   App.Views.SignUpView = Parse.View.extend({
 
     events: {
-      'click .js-btn' : 'addUser'
+      //'click .js-btn' : 'addUser'
+      'submit #signUp' : 'addUser'
     },
     initialize: function(){
       this.render();
@@ -32,6 +33,7 @@
         //    alert("Error: " + error.code + " " + error.message);
         //  }
       });
+      $('.modal').empty();
     }
   });
 }());

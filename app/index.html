@@ -32,22 +32,16 @@
         <div id="blogList"></div>
 
         <div class="nav-bar">
-          <a href="#/add" class="addBtn"><button><span class="entypo-pencil"></span>Add</button></a>
-          <a href="#/signUp"><button>sign up</button></a>
-          <a href="#/login"><button>login</button></a>
-          <a href="#/myPosts"><button>my posts</button></a>
-          <button id="log-out-btn">log out</button>
-          <a href="#/globalPosts"><button>global posts</button></a>
-
-          <div class="modal">
-          <a href="#/login">  <label for="modal-1">
-              <div class="btn js-btn">Click for Modal</div>
-            </label></a>
+          <a href="#/login">
+            <div class="modal">
+            <label for="modal-1">
+              <div class="btn js-btn">Login or Sign up</div>
+            </label>
             <input class="modal-state" id="modal-1" type="checkbox" />
             <div class="modal-window">
                 <div class="modal-inner">
                   <label class="modal-close" for="modal-1"></label>
-                  <h1></h1>
+                  <h3>Sign Up or Login</h3>
                   <!-- <p class="intro">Intro </p> -->
                   <div class="body">
 
@@ -57,11 +51,18 @@
                 </div>
             </div>
           </div>
-
+          </a>
+          <a href="#/add" class="addBtn"><button><span class="entypo-pencil"></span>Add</button></a>
+          <!-- <a href="#/signUp"><button>sign up</button></a>
+          <a href="#/login"><button>login</button></a> -->
+          <a href="#/myPosts"><button id="my-posts-btn">my posts</button></a>
+          <button id="log-out-btn">log out</button>
+          <a href="#/globalPosts"><button>All Posts</button></a>
+          <span id="loggedIn"></span>
           <div id="cat"></div>
 
         </div>
-        <span id="loggedIn"></span>
+
 
       </div>
 
@@ -77,7 +78,7 @@
 <div class="dropdown">
   <div class="dropdown-container">
 
-    <p class="dropdown-button">Select a Category</p>
+    <p class="dropdown-button">Search By</p>
     <ul class="menu">
       <li><a href="#/sort/sortby">Current Trip</a></li>
       <li><a href="#/sort/Future Trip">Future Trip</a></li>
@@ -278,8 +279,8 @@
 <!-- User Sign Up -->
 <script type="text/template" id="SignUpTemp">
   <form action="submit" id="signUp">
-    <input type="text" id="signUpUser">
-    <input type="password" id="signUpPassword"><br>
+    <input type="text" id="signUpUser" placeholder="Enter a username">
+    <input type="password" id="signUpPassword" placeholder="Enter a password"><br>
 
     <button>Sign Up</button>
   </form>
@@ -288,8 +289,8 @@
 <!-- User Login -->
 <script type="text/template" id="loginTemp">
   <form action="submit" id="login">
-    <input type="text" id="username">
-    <input type="password" id="password">
+    <input type="text" id="username" placeholder="username">
+    <input type="password" id="password" placeholder="password"><br>
     <button>Login</button>
   </form>
 </script>

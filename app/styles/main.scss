@@ -25,6 +25,14 @@ background-color: black;
 
 }
 
+button{
+  background-color: HSLA(132, 100%, 27%, 1);
+
+  &:hover{
+    background-color: HSLA(132, 100%, 36%, 1)
+  }
+}
+
  h1 {
    font-size: 100px;
    line-height: 1;
@@ -39,13 +47,14 @@ background-color: black;
  }
 
 #cat{
-  margin-top: 12.5%;
-  margin-left: 24%;
+  margin-top: 4.5%;
+  margin-left: 66%;
 }
 
 #loginField{
- position: absolute;
- //margin-left: -600px;
+ float: right;
+ width: 50%;
+ padding-left: 10px;
 }
 #addPost, #updatePost{
  background-color: white;
@@ -129,11 +138,12 @@ background-color: hsla(160, 67%, 51%, 1);
  padding: 5px;
  width: 200px;
  border: 1px solid gray;
- //margin-left: 800px;
+ height: 208px;
+ padding: 5px;
  #signUpUser, #user{
    margin-top: 10px;
  }
- #signUpPassword, #password{
+ #signUpPassword, #password, #username{
    margin-top: 10px;
  }
  button{
@@ -142,7 +152,15 @@ background-color: hsla(160, 67%, 51%, 1);
  #signUpAvatar{
    margin-top: 17px;
  }
+
 }
+
+#signUpField{
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+
 #blogList{
 position: absolute;
 margin-top: 300px;
@@ -171,11 +189,23 @@ background-color: black;
 }
 
 .nav-bar{
- position: absolute;
+position: absolute;
  padding-top: 20px;
- margin-left: 500px;
+ width: 100%;
+ padding-right: 5px;
+// margin-left: 500px;
+ button{
+  float: right;
+  margin-left: 5px;
+ }
  a{
    color: hsl(201,8,52);
+ }
+ #loggedIn{
+   float: right;
+   font-family: 'Anton';
+   margin-top: 2px;
+   font-size: 1.5em;
  }
 
 }
@@ -350,7 +380,7 @@ margin-top: 50px;
  h1 a{
  position:absolute;
  color: red;
- margin-left: -42.5%;
+ margin-left: -40%;
  font-size: 90px;
  font-family: $oswald;
  margin-top: 150px;
@@ -433,6 +463,9 @@ $dropdown-arrow-top-distance: 0;
 
 .dropdown {
   text-align: center;
+  float: right;
+  display: inline-block;
+  margin: 0px;
 }
 
 .dropdown-container {
@@ -442,7 +475,8 @@ $dropdown-arrow-top-distance: 0;
 }
 
 .dropdown-button {
-  background: $dropdown-background;
+  background: HSLA(132, 100%, 27%, 1);
+  border-color: HSLA(132, 100%, 27%, 1);
   border-bottom-right-radius: $base-border-radius;
   border-top-right-radius: $base-border-radius;
   border-top-left-radius: $base-border-radius;
@@ -451,6 +485,7 @@ $dropdown-arrow-top-distance: 0;
   border-right: $dropdown-border;
   border-bottom: $dropdown-border;
   cursor: pointer;
+  color: white;
   float: right;
   font-size: .7em;
   font-weight: 800;
@@ -466,11 +501,11 @@ $dropdown-arrow-top-distance: 0;
 }
 
 .dropdown-button:hover{
-  background-color: $dropdown-background-hover;
+  background-color: HSLA(132, 100%, 36%, 1);
 }
 
 .dropdown-button:after {
-  color: $base-font-color;
+  color: white;
   content: "\25BE";
   display: block;
   position: absolute;
@@ -507,7 +542,7 @@ $dropdown-arrow-top-distance: 0;
 
 .menu li {
   border-bottom: $dropdown-inner-border;
-  color: $dropdown-color;
+  color: green;
   padding: $dropdown-padding / 2;
 }
 
@@ -631,11 +666,10 @@ $dropdown-arrow-top-distance: 0;
       margin-top: 10em;
     }
 
-    h1 {
+    h3 {
       color: $base-font-color;
       margin-bottom: .6em;
-      text-align: left;
-      text-transform: capitalize;
+      text-align: center;
     }
 
     p.body, p.intro {
