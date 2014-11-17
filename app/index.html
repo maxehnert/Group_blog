@@ -120,7 +120,7 @@
   <h2> Add New Post </h2>
    <input type="text" id="postTitle" required placeholder="Title">
     <textarea  id="postContent" required placeholder="Content"></textarea>
-<!--         <input type="text" id="postCategory" required placeholder="Category"> -->
+
     <input type="text" id="postImage" placeholder="Image URL">
     <select name="select" id="postCategory">
       <option value="Just Visited">Just Visited</option>
@@ -138,11 +138,14 @@
 <script type="text/template" id="updateTemp">
   <li id="<%=objectId%>">
     <form action="submit" id="updatePost">
+    <h2> Update Post </h2>
       <input type="text" id="updateTitle" value="<%=title%>" placeholder="Title">
       <textarea id="updateContent"  placeholder="Content"><%=content%></textarea>
-      <!-- <input type="text" id="updateCategory" value="<%=category%>" placeholder="Category"> -->
+
+<input type="text" id="UpdatepostImage" value="<%= image %>">
+
       <select name="select" id="updateCategory">
-        <option value="<%=category%>"><%=category%></option>
+        <option value="<%=category%>" id="updateCategory" ><%=category%></option>
         <option value="Just Visited">Just Visited</option>
         <option value="Current Trip">Current Trip</option>
         <option value="Future Trip">Future Trip</option>

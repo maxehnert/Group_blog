@@ -70,15 +70,23 @@ button{
    margin-left: 10px;
    margin-top: 10px;
  }
- #postTitle{
+ #postTitle, #updateTitle{
    font-family: $oswald;
  }
- #postTitle, #postContent,#postCategory, #postImage #updateTitle, #updateContent, #updateCategory{
+ #postTitle, #postContent,#postCategory, #postImage{
    background-color: #eee;
    position: absolute;
    margin-top: 20px;
    margin-left: 10px;
    width: 580px;
+ }
+ #updateTitle, #updateContent, #updateCategory, #UpdatepostImage{
+     background-color: #eee;
+     position: absolute;
+     margin-top: 20px;
+     margin-left: 10px;
+     width: 580px;
+
  }
  #addDraft{
    margin-top: 400px;
@@ -88,32 +96,28 @@ button{
    margin-left: 220px;
    margin-top: -47px;
  }
- #updateTitle{
-  position: absolute;
-  margin-left: 30px;
-  margin-top: 20px;
- }
+
  #postContent, #updateContent{
    position: absolute;
    height: 350px;
    margin-top: 120px;
  }
  #postCategory, #updateCategory{
-   margin-top: -42px;
+   margin-top: 78px;
    margin-left: 350px;
    font-family: $oswald;
    width: 240px;
  }
- #postImage{
+ #postImage, #UpdatepostImage{
    margin-left: 10px;
    width: 300px;
    background-color: #eee;
    margin-top: 70px;
  }
-#publishPost, #addDraft{
+#publishPost, #addDraft, #updateDraft{
  position: absolute;
- margin-left: 10px;
- margin-top: 370px;
+ margin-left: 20px;
+ margin-top: 490px;
  font-family: $oswald;
  background-color: $cloud;
 }
@@ -124,13 +128,40 @@ button{
 #addDraft{
 margin-left: 170px;
 background-color: hsla(160, 67%, 51%, 1);
+color: black;
 }
 #addDraft:hover{
- background-color: black;
+
  box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
 }
-}
 
+}
+#publishDraft{
+  position: absolute;
+  margin-left: 120px;
+  margin-top: 490px;
+  font-family: $oswald;
+  background-color: $neongreen;
+  color: black;
+  &:hover{
+    box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+  }
+}
+#delete{
+  margin-top: 490px;
+  background-color: hsl(7,100,40);
+  margin-left: 20px;
+  font-family: $oswald;
+  &:hover{
+    box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+  }
+}
+#updateDraft{
+  &:hover{
+    box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+    background-color: black;
+  }
+}
 #signUp, #login{
  background-color: #eee;
  opacity: .8;
@@ -199,7 +230,16 @@ position: absolute;
   margin-left: 5px;
  }
  a{
-   color: hsl(201,8,52);
+   padding: 15px;
+   padding-bottom: 5px;
+   color: black;
+   font-family: $oswald;
+   font-size: 21px;
+   transition: color 0.2s ease;
+ }
+ a:hover{
+   color:hsl(7,100,40);
+  border-bottom: 3px solid hsl(7,100,40) ;
  }
  #loggedIn{
    float: right;
@@ -208,6 +248,12 @@ position: absolute;
    font-size: 1.5em;
  }
 
+}
+.addBtn{
+  padding: 3px;
+  &:hover{
+    background-color: #eee;
+  }
 }
 
 .fullPost li{
@@ -438,7 +484,7 @@ margin-top: 50px;
   }
 }
 }
-.entypo-flight, .entypo-flag, .entypo-pencil{
+.entypo-flight, .entypo-plus, .entypo-flag, .entypo-pencil{
  padding-right: 7px;
 }
 .created{
@@ -448,6 +494,7 @@ margin-top: 50px;
   font-family: $oswald;
   color: gray;
 }
+
 
 //Category Select Sort Feature
 $dropdown-color: $base-font-color;
@@ -715,3 +762,10 @@ $dropdown-arrow-top-distance: 0;
 }
 
 //End Modal
+
+#loggedIn{
+  font-family: $oswald;
+  margin-left: 800px;
+
+margin-top: 30px;
+}
