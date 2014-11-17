@@ -10,7 +10,7 @@
       'content/:postID' : 'fullPost',
       'globalPosts' : 'globalPosts',
       'myPosts' : 'myPosts',
-      // '' : 'land',
+       'author/:authorid' : 'userPosts',
       'sort/:sortby' : 'globalPosts'
 
 
@@ -22,9 +22,9 @@
     land: function(){
       new App.Views.Landing();
     },
-    // home: function(){
-    //
-    // },
+    userPosts: function(){
+    new App.Views.UserPosts({collection: App.posts, user: App.authorid});
+    },
     myPosts: function(){
       new App.Views.ListPosts({collection: App.posts, user: App.user});
 

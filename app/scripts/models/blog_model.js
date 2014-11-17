@@ -9,7 +9,9 @@
     title: '',
     content: '',
     category: '',
-    image:''
+    image:'',
+    authorid: '',
+    author: ''
 
 
   },
