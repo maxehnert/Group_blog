@@ -40,7 +40,7 @@ button{
    letter-spacing: -1px;
  }
  a{
-   text-align: center;
+  // text-align: center;
    text-decoration: none;
    color: hsl(201,8,52);
 
@@ -162,33 +162,54 @@ color: black;
     background-color: black;
   }
 }
-#signUp, #login{
- background-color: #eee;
- opacity: .8;
+#login, #signUp{
+margin-left: -400px;
+margin-top: -10px;
+ background-color: white;
+
  display: inline-block;
  padding: 5px;
  width: 200px;
- border: 1px solid gray;
- height: 208px;
+ height: 170px;
  padding: 5px;
+font-family: $oswald;
  #signUpUser, #user{
    margin-top: 10px;
  }
  #signUpPassword, #password, #username{
    margin-top: 10px;
+   font-family: $oswald;
+   background-color: #eee;
  }
  button{
-   margin-top: 25px;
+   background-color: $cloud;
+    margin-top: 3px;
+    font-size: 16px;
  }
- #signUpAvatar{
-   margin-top: 17px;
+ a{
+   text-decoration: underline;
+   position: absolute;
+   padding-top:10px;
+   font-size: 16px;
+margin-left:100px;
  }
 
 }
-
+#signUp{
+  position: absolute;
+opacity: 1;
+ margin-top: 170px;
+ margin-left: 200px;
+ input{
+   background-color: #eee;
+ }
+ button{
+  margin-top:-20px;
+ }
+}
 #signUpField{
-  float: left;
-  width: 50%;
+
+
   padding-right: 10px;
 }
 
@@ -218,15 +239,37 @@ background-color: black;
  }
 
 }
-
+#lognav{
+  font-size: 20px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+ &:hover{
+   color: $cloud;
+   background-color: white;
+ }
+}
+#log-out-btn{
+  margin-top:-5px;
+  color: black;
+  opacity: .8;
+  font-family: $oswald;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #eee;
+}
+#log-out-btn:hover{
+  background-color: $cloud;
+  color: white;
+}
 .nav-bar{
-position: absolute;
+ position: absolute;
  padding-top: 20px;
- width: 100%;
+ //width: 100%;
  padding-right: 5px;
-// margin-left: 500px;
+ margin-left: 400px;
  button{
-  float: right;
+
   margin-left: 5px;
  }
  a{
@@ -235,25 +278,24 @@ position: absolute;
    color: black;
    font-family: $oswald;
    font-size: 21px;
-   transition: color 0.2s ease;
+   //transition: color 0.2s ease;
  }
  a:hover{
-   color:hsl(7,100,40);
-  border-bottom: 3px solid hsl(7,100,40) ;
+   color: hsl(7,100,40);
+
  }
- #loggedIn{
-   float: right;
-   font-family: 'Anton';
-   margin-top: 2px;
-   font-size: 1.5em;
- }
+
+/*  #loggedIn{
+  //float: right;
+  font-family: 'Anton';
+  margin-top: 2px;
+  font-size: 1.5em;
+} */
 
 }
 .addBtn{
   padding: 3px;
-  &:hover{
-    background-color: #eee;
-  }
+
 }
 
 .fullPost li{
@@ -268,8 +310,11 @@ position: absolute;
 padding-bottom: 10px;
  background-color: white;
 
+ &:hover{
+   opacity: .9;
+ }
  .singleTitle{
-  // margin-left: 100px;
+   text-align: left;
    font-size: 60px;
    padding-left: 10px;
    font-family: $oswald;
@@ -425,7 +470,7 @@ margin-top: 50px;
  background-attachment:fixed;
  h1 a{
  position:absolute;
- color: red;
+ color: hsl(7,100,40);
  margin-left: -40%;
  font-size: 90px;
  font-family: $oswald;
@@ -449,6 +494,7 @@ margin-top: 50px;
  position: absolute;
  margin-top: 200px;
  width: 300px;
+
  margin-left: 200px;
 }
 #commentbutton{
@@ -472,15 +518,19 @@ margin-top: 50px;
  margin-top: 30px;
   li{
   margin-left: 320px;
-  background-color: #eee;
-  color: black;
-  border: none;
+  background-color: $cloud;
+  font-weight: bold;
+  box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+  opacity: .8;
+  //border: 2px solid white;
+  color: white;
   width: 570px;
   margin-top: 15px;
   padding: 10px;
 }
   li:hover{
-    background-color: white;
+  opacity: .9;
+
   }
 }
 }
@@ -490,9 +540,10 @@ margin-top: 50px;
 .created{
   margin-top: 10px;
   margin-bottom: -10px;
-  margin-left: 390px;
+  margin-left: 370px;
   font-family: $oswald;
-  color: gray;
+  color: #eee;
+
 }
 
 
@@ -765,7 +816,7 @@ $dropdown-arrow-top-distance: 0;
 
 #loggedIn{
   font-family: $oswald;
-  margin-left: 800px;
-
-margin-top: 30px;
+  font-size: 1.5em;
+  vertical-align: top;
+  padding-left: 5px;
 }

@@ -38,7 +38,7 @@
     },
     userLogin: function(){
       new App.Views.LoginView();
-      new App.Views.SignUpView();
+
     },
     userSignUp: function(){
       new App.Views.SignUpView();
@@ -51,7 +51,7 @@
       new App.Views.FullContentView({ post: p});
     },
     globalPosts: function(sortby){
-      new App.Views.CategorySelect({collection: App.posts, sort: App.category});
+    //  new App.Views.CategorySelect({collection: App.posts, sort: App.category});
       new App.Views.GlobalListPosts({collection: App.posts, sort: sortby});
     }
 
