@@ -31,23 +31,23 @@
         <div class="header"></div>
         <div id="blogList"></div>
         <div class="nav-bar">
+          <a href="#/globalPosts">Home</a>
           <a href="#/add" class="addBtn"><span class="entypo-plus"></span>Add New</a>
           <a href="#/myPosts">My Posts</a>
 
-          <a href="#/signUp"><button>sign up</button></a>
-          <a href="#/login"><button>login</button></a>
 
-          <button id="log-out-btn">log out</button>
-          <a href="#/globalPosts"><button>global posts</button></a>
+          <a href="#/login"><button id="lognav">Login</button></a>
+
+          <button id="log-out-btn">Log Out</button>
+
+          <span id="loggedIn"></span>
           <div id="loginField"></div>
-        </div>
-        <span id="loggedIn"></span>
+
+        <div id="signUpField"></div>
+
+
       </div>
-<!--   <div class="sorts">
-       <a href="#/">Rating</a> &bull;
-        <a href="#/sort/title">Title</a> &bull;
-        <a href="#/sort/category">Category</a>
-      </div>-->
+
     </div><!--body container ends here-->
 
 <!--comment template-->
@@ -234,8 +234,8 @@
 <!-- User Sign Up -->
 <script type="text/template" id="SignUpTemp">
   <form action="submit" id="signUp">
-    <input type="text" id="signUpUser">
-    <input type="password" id="signUpPassword"><br>
+    <input type="text" id="signUpUser" placeholder="Username">
+    <input type="password" id="signUpPassword" placeholder="Password"><br>
 
     <button>Sign Up</button>
   </form>
@@ -244,8 +244,9 @@
 <!-- User Login -->
 <script type="text/template" id="loginTemp">
   <form action="submit" id="login">
-    <input type="text" id="username">
-    <input type="password" id="password">
+    <input type="text" placeholder="Username" id="username">
+    <input type="password" placeholder="Password" id="password">
+    <a class="signuplink" href="#/signUp">Sign Up</a>
     <button>Login</button>
   </form>
 </script>

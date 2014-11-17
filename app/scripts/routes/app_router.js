@@ -2,7 +2,7 @@
   App.Routers.AppRouter = Parse.Router.extend({
 
     routes: {
-      '' : 'home',
+      '' : 'globalPosts',
       "edit/:postID" : 'editPost',
       'add' : 'addPost',
       'login' : 'userLogin',
@@ -10,7 +10,6 @@
       'content/:postID' : 'fullPost',
       'globalPosts' : 'globalPosts',
       'myPosts' : 'myPosts',
-      '' : 'land',
       'sort/:sortby' : 'globalPosts'
 
 
@@ -38,6 +37,7 @@
     },
     userLogin: function(){
       new App.Views.LoginView();
+    
     },
     userSignUp: function(){
       new App.Views.SignUpView();
@@ -50,6 +50,7 @@
       new App.Views.FullContentView({ post: p});
     },
     globalPosts: function(sortby){
+    //  new App.Views.CategorySelect({collection: App.posts, sort: App.category});
       new App.Views.GlobalListPosts({collection: App.posts, sort: sortby});
     }
 

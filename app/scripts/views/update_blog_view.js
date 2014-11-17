@@ -17,6 +17,7 @@
 
       this.render();
 
+
       $('#blogList').html(this.$el);
     },
 
@@ -26,6 +27,7 @@
 
     this.$el.html(this.template(this.options.post.toJSON()));
 
+    $('#cat').empty();
     },
 
 

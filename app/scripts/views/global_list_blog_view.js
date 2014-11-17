@@ -5,7 +5,9 @@
     tagName: 'ul',
     className: 'addPosts',
 
-    events: {},
+    events: {
+    //  'click .dropdown-button' : 'dropDown'
+    },
 
     template : _.template($('#globalListTemp').html()),
 
@@ -58,6 +60,7 @@ render: function () {
         this.collection.each(function(p){
           if (p.attributes.draft === false) {
             self.$el.append(self.template(p.toJSON()));
+
           }
           ///////old
         // _.each(local_collection, function (c) {
@@ -69,9 +72,19 @@ render: function () {
         this.collection.sort();
         this.collection.each(function(p){
           self.$el.append(self.template(p.toJSON()));
+
         });
       }
 
 }
+// dropDown: function(){
+//   $(".menu").toggleClass("show-menu");
+//   $(".menu > li").click(function(){
+//     $(".dropdown-button").html($(this).html());
+//     $(".menu").removeClass("show-menu");
+//   });
+//
+// }
+
 });
 }());

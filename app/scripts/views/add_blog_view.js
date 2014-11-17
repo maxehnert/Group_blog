@@ -9,10 +9,12 @@
     initialize: function(){
       this.render();
 
+
       $('#blogList').html(this.$el);
     },
     render: function(){
       this.$el.html($('#addTemp').html());
+      $('#cat').empty();
 
     },
     // addPost: function(e){
@@ -52,6 +54,7 @@
         author: App.user.attributes.username,
         authorid: App.user.id,
         draft: draft
+        //time: moment().format('YYYY [escaped] YYYY')
 
       });
 

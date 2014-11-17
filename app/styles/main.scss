@@ -18,15 +18,21 @@ body {
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 background-color: black;
 }
+
 .body-container{
 //height: 1000px;  background-image:url("../images/28H.jpg");
  background-size: cover;
 
 }
-.hero-unit {
- width: 100%;
- border-radius: 6px;
- padding: 20px;
+
+button{
+  background-color: HSLA(132, 100%, 27%, 1);
+
+  &:hover{
+    background-color: HSLA(132, 100%, 36%, 1)
+  }
+}
+
  h1 {
    font-size: 100px;
    line-height: 1;
@@ -34,13 +40,21 @@ background-color: black;
    letter-spacing: -1px;
  }
  a{
+  // text-align: center;
    text-decoration: none;
    color: hsl(201,8,52);
+
  }
+
+#cat{
+  margin-top: 4.5%;
+  margin-left: 66%;
 }
+
 #loginField{
- position: absolute;
- margin-left: -600px;
+ float: right;
+ width: 50%;
+ padding-left: 10px;
 }
 #addPost, #updatePost{
  background-color: white;
@@ -148,27 +162,57 @@ color: black;
     background-color: black;
   }
 }
-#signUp, #login{
- background-color: #eee;
- opacity: .8;
- display: block;
+#login, #signUp{
+margin-left: -400px;
+margin-top: -10px;
+ background-color: white;
+
+ display: inline-block;
  padding: 5px;
  width: 200px;
- border: 1px solid gray;
- margin-left: 800px;
+ height: 170px;
+ padding: 5px;
+font-family: $oswald;
  #signUpUser, #user{
    margin-top: 10px;
  }
- #signUpPassword, #password{
+ #signUpPassword, #password, #username{
    margin-top: 10px;
+   font-family: $oswald;
+   background-color: #eee;
  }
  button{
-   margin-top: 25px;
+   background-color: $cloud;
+    margin-top: 3px;
+    font-size: 16px;
  }
- #signUpAvatar{
-   margin-top: 17px;
+ a{
+   text-decoration: underline;
+   position: absolute;
+   padding-top:10px;
+   font-size: 16px;
+margin-left:100px;
+ }
+
+}
+#signUp{
+  position: absolute;
+opacity: 1;
+ margin-top: 170px;
+ margin-left: 200px;
+ input{
+   background-color: #eee;
+ }
+ button{
+  margin-top:-20px;
  }
 }
+#signUpField{
+
+
+  padding-right: 10px;
+}
+
 #blogList{
 position: absolute;
 margin-top: 300px;
@@ -195,30 +239,63 @@ background-color: black;
  }
 
 }
-
+#lognav{
+  font-size: 20px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+ &:hover{
+   color: $cloud;
+   background-color: white;
+ }
+}
+#log-out-btn{
+  margin-top:-5px;
+  color: black;
+  opacity: .8;
+  font-family: $oswald;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #eee;
+}
+#log-out-btn:hover{
+  background-color: $cloud;
+  color: white;
+}
 .nav-bar{
- position: absolute;
+position: absolute;
  padding-top: 20px;
- margin-left: 500px;
+ width: 100%;
+ padding-right: 5px;
+ margin-left: 400px;
+ button{
+
+  margin-left: 5px;
+ }
  a{
    padding: 15px;
    padding-bottom: 5px;
    color: black;
    font-family: $oswald;
    font-size: 21px;
-   transition: color 0.2s ease;
+   //transition: color 0.2s ease;
  }
  a:hover{
-   color:hsl(7,100,40);
-  border-bottom: 3px solid hsl(7,100,40) ;
+   color: hsl(7,100,40);
+
+ }
+
+ #loggedIn{
+   //float: right;
+   font-family: 'Anton';
+   margin-top: 2px;
+   font-size: 1.5em;
  }
 
 }
 .addBtn{
   padding: 3px;
-  &:hover{
-    background-color: #eee;
-  }
+
 }
 
 .fullPost li{
@@ -232,11 +309,12 @@ background-color: black;
  margin-bottom: 30px;
 padding-bottom: 10px;
  background-color: white;
+
  &:hover{
    opacity: .9;
  }
  .singleTitle{
-  // margin-left: 100px;
+   text-align: left;
    font-size: 60px;
    padding-left: 10px;
    font-family: $oswald;
@@ -381,154 +459,6 @@ margin-top: 50px;
 }
 
 
-//Modal window
-.modal {
- $modal-padding: 3em;
- $modal-background: $base-background-color;
- $modal-close-color: $light-gray;
- $modal-image-height: 135px;
- $modal-image-width: $modal-image-height;
-
-/*   label {
- cursor: pointer;
- margin-bottom: 0;
-}
-
-label img {
- \$img-width: 300px;
- border-radius: \$img-width/2;
- display: block;
- max-width: \$img-width;
-}
-
-input[type="checkbox"] {
- display: none;
-}
-
-.btn {
- @extend button;
-}
-
-.modal-open {
- overflow: hidden;
-} */
-
- .modal-window { // overlay
-   @include transition(opacity .25s ease);
-   @include position(fixed, 0px 0px 0px 0px);
-   background: rgba(0,0,0, .85);
-   opacity: 0;
-   text-align: left;
-   visibility: hidden;
-   z-index: 99999999999;
-
-   .modal-bg {
-     @include position(absolute, 0px 0px 0px 0px);
-     cursor: pointer;
-   }
- }
-
- .modal-close {
-   @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
-   @include size(1.5em);
-   cursor: pointer;
-   background: $modal-background;
-
-   &:after,
-   &:before {
-     @include position(absolute, 3px 3px 0 50%);
-     @include transform(rotate(45deg));
-     @include size(.15em 1.5em);
-     background: $modal-close-color;
-     content: '';
-     display: block;
-     margin: -3px 0 0 -1px;
-   }
-
-   &:hover:after,
-   &:hover:before {
-     background: darken($modal-close-color, 10);
-   }
-
-   &:before {
-     @include transform(rotate(-45deg));
-   }
- }
-
- .modal-inner {
-   @include transition(opacity .25s ease);
-   border-radius: $base-border-radius;
-   background: $modal-background;
-   margin: auto;
-   max-height: 95%;
-   position: relative;
-   overflow: auto;
-   width: 95%;
-   padding: $modal-padding /2;
-   margin-top: .6em;
-
-   @include media($medium-screen) {
-     padding: $modal-padding;
-     width: 60%;
-     max-height: 60%;
-     margin-top: 10em;
-   }
-
-   @include media($large-screen) {
-     width: 50%;
-     margin-top: 10em;
-   }
-
-   h1 {
-     color: $base-font-color;
-     margin-bottom: .6em;
-     text-align: left;
-     text-transform: capitalize;
-   }
-
-   p.body, p.intro {
-     font-size: $base-font-size;
-     max-width: 100% !important;
-     text-align: left;
-
-     &.intro {
-       color: $blue;
-       line-height: 1.6em;
-     }
-
-     &.body {
-       color: $base-font-color;
-       line-height: 1.45em;
-
-       @include media($medium-screen) {
-         @include columns(2 8em);
-       }
-     }
-   }
-
-   a.cta {
-     color: white;
-     display: inline-block;
-     margin-right: .5em;
-     margin-top: 1em;
-
-     &:last-child {
-       padding: 0 2em;
-     }
-   }
- }
-
- .modal-state:checked + .modal-window {
-   opacity: 1;
-   visibility: visible;
- }
-
- .modal-state:checked + .modal-window .modal-inner {
-   top: 0;
- }
-}
-
-// end modal window
 
 .topbanner{
 
@@ -540,11 +470,13 @@ input[type="checkbox"] {
  background-attachment:fixed;
  h1 a{
  position:absolute;
- color: red;
- margin-left: 100px;
+ color: hsl(7,100,40);
+ margin-left: -40%;
  font-size: 90px;
  font-family: $oswald;
  margin-top: 150px;
+ text-align: center;
+ z-index: 10;
 }
 }
 .header{
@@ -613,6 +545,275 @@ input[type="checkbox"] {
   color: #eee;
 
 }
+
+
+//Category Select Sort Feature
+$dropdown-color: $base-font-color;
+$dropdown-description-color: lighten($dropdown-color, 40);
+$dropdown-border: 1px solid silver;
+$dropdown-background: $base-background-color;
+$dropdown-background-hover: darken($dropdown-background, 3);
+$dropdown-inner-border: 1px solid silver;
+$dropdown-height: 40px;
+$dropdown-padding: 1em;
+$dropdown-distance-from-menu: 50px;
+$dropdown-arrow-top-distance: 0;
+
+.dropdown {
+  text-align: center;
+  float: right;
+  display: inline-block;
+  margin: 0px;
+}
+
+.dropdown-container {
+  display: inline-block;
+  position: relative;
+
+}
+
+.dropdown-button {
+  background: HSLA(132, 100%, 27%, 1);
+  border-color: HSLA(132, 100%, 27%, 1);
+  border-bottom-right-radius: $base-border-radius;
+  border-top-right-radius: $base-border-radius;
+  border-top-left-radius: $base-border-radius;
+  border-bottom-left-radius: $base-border-radius;
+  border-top: $dropdown-border;
+  border-right: $dropdown-border;
+  border-bottom: $dropdown-border;
+  cursor: pointer;
+  color: white;
+  float: right;
+  font-size: .7em;
+  font-weight: 800;
+  line-height: $dropdown-height;
+  margin-bottom: 0;
+  padding: 0 ($dropdown-padding * 3.5) 0 ($dropdown-padding / 2);
+  position: relative;
+
+  @include media($large-screen) {
+    font-size: 1em;
+    padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+  }
+}
+
+.dropdown-button:hover{
+  background-color: HSLA(132, 100%, 36%, 1);
+}
+
+.dropdown-button:after {
+  color: white;
+  content: "\25BE";
+  display: block;
+  position: absolute;
+  right: $dropdown-padding;
+  top: $dropdown-arrow-top-distance;
+}
+
+.menu {
+  @include transition (all 0.2s ease-in-out);
+  background: $dropdown-background;
+  border-radius: $base-border-radius;
+  border: $dropdown-border;
+  box-shadow: 0 2px 2px transparentize(black, .8);
+  color: $dropdown-color;
+  cursor: pointer;
+  display: none;
+  overflow: show;
+  position: absolute;
+  right: 0;
+  top: $dropdown-distance-from-menu;
+  width: 140px;
+  z-index: 99999;
+
+  &:before {
+    @include position(absolute, 0 1em 0 0);
+    color: $dropdown-background;
+    content: "\25b2";
+    font-size: 1.4em;
+    pointer-events: none;
+    text-shadow: 0 -2px 2px transparentize(black, .7);
+    top: -1em;
+  }
+}
+
+.menu li {
+  border-bottom: $dropdown-inner-border;
+  color: green;
+  padding: $dropdown-padding / 2;
+}
+
+.menu li:hover {
+  background: $dropdown-background-hover;
+}
+
+.menu li:first-child {
+  border-top-left-radius: $base-border-radius;
+  border-top-right-radius: $base-border-radius;
+}
+
+.menu li:last-child {
+  border: none;
+  border-bottom-left-radius: $base-border-radius;
+  border-bottom-right-radius: $base-border-radius;
+}
+
+.show-menu {
+  display: block;
+}
+
+//End Drop Down Menu
+
+// Start Modal Window
+
+.modal {
+  $modal-padding: 3em;
+  $modal-background: $base-background-color;
+  $modal-close-color: $light-gray;
+  $modal-image-height: 135px;
+  $modal-image-width: $modal-image-height;
+
+  label {
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+
+  label img {
+    $img-width: 300px;
+    border-radius: $img-width/2;
+    display: block;
+    max-width: $img-width;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .btn {
+    @extend button;
+  }
+
+  .modal-open {
+    overflow: hidden;
+  }
+
+  .modal-window { // overlay
+    @include transition(opacity .25s ease);
+    @include position(fixed, 0px 0px 0px 0px);
+    background: rgba(0,0,0, .85);
+    opacity: 0;
+    text-align: left;
+    visibility: hidden;
+    z-index: 99999999999;
+
+    .modal-bg {
+      @include position(absolute, 0px 0px 0px 0px);
+      cursor: pointer;
+    }
+  }
+
+  .modal-close {
+    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+    @include size(1.5em);
+    cursor: pointer;
+    background: $modal-background;
+
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(.15em 1.5em);
+      background: $modal-close-color;
+      content: '';
+      display: block;
+      margin: -3px 0 0 -1px;
+    }
+
+    &:hover:after,
+    &:hover:before {
+      background: darken($modal-close-color, 10);
+    }
+
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+
+  .modal-inner {
+    @include transition(opacity .25s ease);
+    border-radius: $base-border-radius;
+    background: $modal-background;
+    margin: auto;
+    max-height: 95%;
+    position: relative;
+    overflow: auto;
+    width: 95%;
+    padding: $modal-padding /2;
+    margin-top: .6em;
+
+    @include media($medium-screen) {
+      padding: $modal-padding;
+      width: 60%;
+      max-height: 60%;
+      margin-top: 10em;
+    }
+
+    @include media($large-screen) {
+      width: 50%;
+      margin-top: 10em;
+    }
+
+    h3 {
+      color: $base-font-color;
+      margin-bottom: .6em;
+      text-align: center;
+    }
+
+    p.body, p.intro {
+      font-size: $base-font-size;
+      max-width: 100% !important;
+      text-align: left;
+
+      &.intro {
+        color: $blue;
+        line-height: 1.6em;
+      }
+
+      &.body {
+        color: $base-font-color;
+        line-height: 1.45em;
+
+        @include media($medium-screen) {
+          @include columns(2 8em);
+        }
+      }
+    }
+
+    a.cta {
+      color: white;
+      display: inline-block;
+      margin-right: .5em;
+      margin-top: 1em;
+
+      &:last-child {
+        padding: 0 2em;
+      }
+    }
+  }
+
+  .modal-state:checked + .modal-window {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked + .modal-window .modal-inner {
+    top: 0;
+  }
+}
+
+//End Modal
+
 #loggedIn{
   font-family: $oswald;
   margin-left: 800px;
