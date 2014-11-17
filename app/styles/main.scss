@@ -232,7 +232,9 @@ background-color: black;
  margin-bottom: 30px;
 padding-bottom: 10px;
  background-color: white;
-
+ &:hover{
+   opacity: .9;
+ }
  .singleTitle{
   // margin-left: 100px;
    font-size: 60px;
@@ -560,6 +562,7 @@ input[type="checkbox"] {
  position: absolute;
  margin-top: 200px;
  width: 300px;
+
  margin-left: 200px;
 }
 #commentbutton{
@@ -583,15 +586,19 @@ input[type="checkbox"] {
  margin-top: 30px;
   li{
   margin-left: 320px;
-  background-color: #eee;
-  color: black;
-  border: none;
+  background-color: $cloud;
+  font-weight: bold;
+  box-shadow: 8px 8px 14px 0px rgba(50, 50, 50, 1);
+  opacity: .8;
+  //border: 2px solid white;
+  color: white;
   width: 570px;
   margin-top: 15px;
   padding: 10px;
 }
   li:hover{
-    background-color: white;
+  opacity: .9;
+
   }
 }
 }
@@ -601,9 +608,10 @@ input[type="checkbox"] {
 .created{
   margin-top: 10px;
   margin-bottom: -10px;
-  margin-left: 390px;
+  margin-left: 370px;
   font-family: $oswald;
-  color: gray;
+  color: #eee;
+
 }
 #loggedIn{
   font-family: $oswald;
