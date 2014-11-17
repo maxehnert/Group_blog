@@ -2,21 +2,17 @@
   App.Routers.AppRouter = Parse.Router.extend({
 
     routes: {
-      'shit' : 'home',
+      '' : 'home',
       "edit/:postID" : 'editPost',
       'add' : 'addPost',
       'login' : 'userLogin',
-      'signUp' : 'userSignUp',
-      '' : 'comments'
+      'signUp' : 'userSignUp'
 
 
     },
     initialize: function () {
       Parse.history.start();
 
-    },
-    comments: function(){
-      new App.Views.LandView();
     },
     home: function(){
       new App.Views.ListPosts({collection: App.posts});
