@@ -34,10 +34,12 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
       $('#log-out-btn').remove();
       $('#my-posts-btn').remove();
       $('.addBtn').remove();
+      $('#myPostsLink').remove();
     } else {
       currUsr = 'Welcome ' + App.user.attributes.username;
       $('#logOut').text('Log Out');
-      $('.modal').remove();
+      $('#lognav').remove();
+
     }
     $('#loggedIn').html(currUsr);
   };

@@ -14,6 +14,7 @@
     },
 
     render: function(){
+      this.$el.empty();
       this.$el.html($('#loginTemp').html());
     },
 
@@ -30,7 +31,7 @@
           App.router.navigate('globalPosts', {trigger: true});
           console.log('were logged in');
           $('#loginField').hide();
-      
+
         }
       });
       $('.modal').empty();

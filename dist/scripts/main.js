@@ -430,73 +430,74 @@ navigate: function(){
       $('#blogList').html(this.$el);
 
     },
-//     render: function(){
-//       var self = this;
-//
-//       this.$el.empty();
-//
-//       this.collection.each(function(p){
-//         if (p.attributes.draft === false) {
-//           self.$el.append(self.template(p.toJSON()));
-//         }
-//       });
-//
-//       //add sorting if/elses here
-//
-//       return this;
-//
-//     }
-//
-//
-//   });
-// }());
-
-
-render: function () {
+    render: function(){
       var self = this;
 
-      // Empty out
       this.$el.empty();
 
-      // Sorting On The Fly
-      if (this.options.sort != undefined) {
-        // Setting up a localized collection to sort by our sort param
-      //var local_collection =
-        this.collection.sortBy( function (model){
-          return model.get(self.options.sort);
-        });
-        ///new
-        this.collection.each(function(p){
-          if (p.attributes.draft === false) {
-            self.$el.append(self.template(p.toJSON()));
-
-          }
-          ///////old
-        // _.each(local_collection, function (c) {
-        //   self.$el.append(self.template(c.toJSON()));
-        });
-      }
-      else {
-        // Sort from our default comparator in our collection constructor
-        this.collection.sort();
-        this.collection.each(function(p){
+      this.collection.each(function(p){
+        if (p.attributes.draft === false) {
           self.$el.append(self.template(p.toJSON()));
+        }
+      });
 
-        });
-      }
+      //add sorting if/elses here
 
-}
-// dropDown: function(){
-//   $(".menu").toggleClass("show-menu");
-//   $(".menu > li").click(function(){
-//     $(".dropdown-button").html($(this).html());
-//     $(".menu").removeClass("show-menu");
-//   });
+      return this;
+
+    }
+
+
+  });
+}());
+
+///test
+
+// render: function () {
+//       var self = this;
+//
+//       // Empty out
+//       this.$el.empty();
+//
+//       // Sorting On The Fly
+//       if (this.options.sort != undefined) {
+//         // Setting up a localized collection to sort by our sort param
+//       //var local_collection =
+//         this.collection.sortBy( function (model){
+//           return model.get(self.options.sort);
+//         });
+//         ///new
+//         this.collection.each(function(p){
+//           if (p.attributes.draft === false) {
+//             self.$el.append(self.template(p.toJSON()));
+//
+//           }
+//           ///////old
+//         // _.each(local_collection, function (c) {
+//         //   self.$el.append(self.template(c.toJSON()));
+//         });
+//       }
+//       else {
+//         // Sort from our default comparator in our collection constructor
+//         this.collection.sort();
+//         this.collection.each(function(p){
+//           self.$el.append(self.template(p.toJSON()));
+//
+//         });
+//       }
 //
 // }
-
-});
-}());
+// // dropDown: function(){
+// //   $(".menu").toggleClass("show-menu");
+// //   $(".menu > li").click(function(){
+// //     $(".dropdown-button").html($(this).html());
+// //     $(".menu").removeClass("show-menu");
+// //   });
+// //
+// // }
+//
+// });
+// }());
 
 (function(){
 App.Views.Landing = Parse.View.extend({
@@ -586,6 +587,7 @@ App.Views.Landing = Parse.View.extend({
     },
 
     render: function(){
+      this.$el.empty();
       this.$el.html($('#loginTemp').html());
     },
 
@@ -602,7 +604,7 @@ App.Views.Landing = Parse.View.extend({
           App.router.navigate('globalPosts', {trigger: true});
           console.log('were logged in');
           $('#loginField').hide();
-      
+
         }
       });
       $('.modal').empty();
@@ -821,10 +823,12 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
       $('#log-out-btn').remove();
       $('#my-posts-btn').remove();
       $('.addBtn').remove();
+      $('#myPostsLink').remove();
     } else {
       currUsr = 'Welcome ' + App.user.attributes.username;
       $('#logOut').text('Log Out');
-      $('.modal').remove();
+      $('#lognav').remove();
+
     }
     $('#loggedIn').html(currUsr);
   };

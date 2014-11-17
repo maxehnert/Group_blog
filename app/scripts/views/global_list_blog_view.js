@@ -21,70 +21,71 @@
       $('#blogList').html(this.$el);
 
     },
-//     render: function(){
-//       var self = this;
-//
-//       this.$el.empty();
-//
-//       this.collection.each(function(p){
-//         if (p.attributes.draft === false) {
-//           self.$el.append(self.template(p.toJSON()));
-//         }
-//       });
-//
-//       //add sorting if/elses here
-//
-//       return this;
-//
-//     }
-//
-//
-//   });
-// }());
-
-
-render: function () {
+    render: function(){
       var self = this;
 
-      // Empty out
       this.$el.empty();
 
-      // Sorting On The Fly
-      if (this.options.sort != undefined) {
-        // Setting up a localized collection to sort by our sort param
-      //var local_collection =
-        this.collection.sortBy( function (model){
-          return model.get(self.options.sort);
-        });
-        ///new
-        this.collection.each(function(p){
-          if (p.attributes.draft === false) {
-            self.$el.append(self.template(p.toJSON()));
-
-          }
-          ///////old
-        // _.each(local_collection, function (c) {
-        //   self.$el.append(self.template(c.toJSON()));
-        });
-      }
-      else {
-        // Sort from our default comparator in our collection constructor
-        this.collection.sort();
-        this.collection.each(function(p){
+      this.collection.each(function(p){
+        if (p.attributes.draft === false) {
           self.$el.append(self.template(p.toJSON()));
+        }
+      });
 
-        });
-      }
+      //add sorting if/elses here
 
-}
-// dropDown: function(){
-//   $(".menu").toggleClass("show-menu");
-//   $(".menu > li").click(function(){
-//     $(".dropdown-button").html($(this).html());
-//     $(".menu").removeClass("show-menu");
-//   });
+      return this;
+
+    }
+
+
+  });
+}());
+
+///test
+
+// render: function () {
+//       var self = this;
+//
+//       // Empty out
+//       this.$el.empty();
+//
+//       // Sorting On The Fly
+//       if (this.options.sort != undefined) {
+//         // Setting up a localized collection to sort by our sort param
+//       //var local_collection =
+//         this.collection.sortBy( function (model){
+//           return model.get(self.options.sort);
+//         });
+//         ///new
+//         this.collection.each(function(p){
+//           if (p.attributes.draft === false) {
+//             self.$el.append(self.template(p.toJSON()));
+//
+//           }
+//           ///////old
+//         // _.each(local_collection, function (c) {
+//         //   self.$el.append(self.template(c.toJSON()));
+//         });
+//       }
+//       else {
+//         // Sort from our default comparator in our collection constructor
+//         this.collection.sort();
+//         this.collection.each(function(p){
+//           self.$el.append(self.template(p.toJSON()));
+//
+//         });
+//       }
 //
 // }
-
-});
-}());
+// // dropDown: function(){
+// //   $(".menu").toggleClass("show-menu");
+// //   $(".menu > li").click(function(){
+// //     $(".dropdown-button").html($(this).html());
+// //     $(".menu").removeClass("show-menu");
+// //   });
+// //
+// // }
+//
+// });
+// }());

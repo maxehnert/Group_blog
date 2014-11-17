@@ -163,16 +163,16 @@ color: black;
   }
 }
 #login, #signUp{
-margin-left: -400px;
-margin-top: -10px;
- background-color: white;
+  margin-left: -18%;
+  margin-top: -8%;
+  background-color: transparent;
+  display: inline-block;
+  padding: 5px;
+  width: 200px;
+  height: 170px;
+  padding: 5px;
+  font-family: "Oswald",sans-serif;
 
- display: inline-block;
- padding: 5px;
- width: 200px;
- height: 170px;
- padding: 5px;
-font-family: $oswald;
  #signUpUser, #user{
    margin-top: 10px;
  }
@@ -185,6 +185,9 @@ font-family: $oswald;
    background-color: $cloud;
     margin-top: 3px;
     font-size: 16px;
+    &:hover{
+      background-color:black;
+    }
  }
  a{
    text-decoration: underline;
