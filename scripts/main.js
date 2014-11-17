@@ -827,7 +827,8 @@ Parse.initialize("j5VJ8EgUlacmXfvF2aTs1tKuOSaJxUSvfxQJPBwv", "VRCaCvLyFFfzIStyvs
     } else {
       currUsr = 'Welcome ' + App.user.attributes.username;
       $('#logOut').text('Log Out');
-      $('#lognav').remove();
+      $('#lognav-a').remove();
+
 
     }
     $('#loggedIn').html(currUsr);
